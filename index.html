@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>夏天的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="夏天的博客">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="夏天的博客">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="august">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="夏天的博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">夏天的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-路由器DMZ" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/05/08/%E8%B7%AF%E7%94%B1%E5%99%A8DMZ/" class="article-date">
+  <time class="dt-published" datetime="2025-05-08T01:35:07.936Z" itemprop="datePublished">2025-05-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/05/08/%E8%B7%AF%E7%94%B1%E5%99%A8DMZ/">路由器小结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="路由器DMZ"><a href="#路由器DMZ" class="headerlink" title="路由器DMZ"></a>路由器DMZ</h2><p>路由器的DMZ（Demilitarized Zone，非军事区）是一种网络安全区域设置，它是为了解决安装防火墙后外部网络无法访问内部网络服务器的问题而设立的一个非安全系统与安全系统之间的缓冲区。以下是关于它的详细介绍：</p>
+<h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><ul>
+<li><p><strong>提供特定服务访问</strong>：允许外部网络有限度地访问内部网络中的特定服务器或设备。比如企业希望对外提供Web服务、FTP服务等，又不想让整个内部网络暴露在外部风险下，就可以把提供这些服务的服务器放置在DMZ区域。这样，外部用户可以访问DMZ中的服务器获取相应服务，但无法直接访问内部网络的其他资源，在一定程度上保障了内部网络的安全。</p>
+</li>
+<li><p><strong>隔离与保护内部网络</strong>：将对外服务的设备与内部核心网络隔离开来。如果DMZ中的服务器受到攻击，攻击者也较难进一步渗透到内部网络，从而为内部网络中的数据和设备提供了额外的安全防护层。</p>
+</li>
+</ul>
+<h3 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h3><ul>
+<li><strong>端口映射</strong>：路由器通过配置端口映射规则，将外部网络请求的特定端口映射到DMZ区域内设备的相应端口。例如，当外部用户访问服务器的80端口（通常用于HTTP服务）时，路由器会将这个请求转发到DMZ中Web服务器的80端口，使外部用户能够访问到Web服务器上的网页内容。</li>
+<li><strong>访问控制</strong>：路由器或防火墙会根据预设的访问控制列表（ACL）来决定哪些外部流量可以进入DMZ，以及DMZ中的设备可以访问哪些外部资源和内部网络资源。一般来说，会允许外部对DMZ中特定服务端口的访问，同时限制其他不必要的访问，以确保只有合法的流量能够通过。</li>
+</ul>
+<h3 id="设置步骤"><a href="#设置步骤" class="headerlink" title="设置步骤"></a>设置步骤</h3><p>不同品牌和型号的路由器设置DMZ的步骤可能会有所不同，但一般来说可以按照以下基本步骤进行：</p>
+<ol>
+<li><strong>登录路由器管理界面</strong>：在浏览器中输入路由器的管理地址，通常是192.168.1.1或192.168.0.1等，然后输入用户名和密码登录。 </li>
+<li><strong>找到DMZ设置选项</strong>：在路由器管理界面中，查找“DMZ”“虚拟服务器”或“转发规则”等相关选项。 </li>
+<li><strong>配置DMZ主机</strong>：在DMZ设置页面，输入要设置为DMZ的设备的IP地址。这个IP地址通常是内部网络中需要对外提供服务的服务器或设备的本地IP地址。</li>
+<li><strong>保存设置</strong>：完成IP地址输入后，点击“保存”或“应用”按钮，使设置生效。 虽然DMZ提供了一种让外部网络访问内部特定资源的便利方式，但也会带来一定的安全风险。因为DMZ中的设备相对更容易受到外部攻击，所以在使用DMZ时，需要谨慎配置访问规则，并确保DMZ中的设备本身具备足够的安全防护措施，如安装防火墙、杀毒软件等。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/05/08/%E8%B7%AF%E7%94%B1%E5%99%A8DMZ/" data-id="cmaep75e200076s638cmr82ap" data-title="路由器小结" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-NFC知识" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/05/07/NFC%E7%9F%A5%E8%AF%86/" class="article-date">
+  <time class="dt-published" datetime="2025-05-07T07:00:00.000Z" itemprop="datePublished">2025-05-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/05/07/NFC%E7%9F%A5%E8%AF%86/">NFC知识</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>近场通信（NFC）是一种基于无线射频识别（RFID）技术的短距离通信技术，其原理和应用场景与存储结构中的“扇区”和“扇区加密”密切相关。以下是详细解释：</p>
+<hr>
+<h3 id="一、NFC-的核心原理"><a href="#一、NFC-的核心原理" class="headerlink" title="一、NFC 的核心原理"></a><strong>一、NFC 的核心原理</strong></h3><ol>
+<li><strong>工作基础</strong><ul>
+<li>基于电磁感应，工作频率为 <strong>13.56 MHz</strong>，通信距离通常小于 10 厘米。</li>
+<li>包含两种模式：<ul>
+<li><strong>主动模式</strong>：双方设备（如手机和读卡器）均能主动发射电磁场交换数据。</li>
+<li><strong>被动模式</strong>：一方（如 NFC 标签）无电源，依赖另一方的电磁场供电并反射信号。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>数据交换过程</strong><ul>
+<li><strong>初始化</strong>：读卡器生成射频场激活标签。</li>
+<li><strong>调制与解调</strong>：标签通过负载调制（改变天线阻抗）向读卡器发送数据。</li>
+<li><strong>协议层</strong>：遵循 ISO&#x2F;IEC 14443 标准（如手机支付）或 ISO&#x2F;IEC 18092 标准（设备间通信）。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="二、NFC-标签的存储结构：扇区（Sector）"><a href="#二、NFC-标签的存储结构：扇区（Sector）" class="headerlink" title="二、NFC 标签的存储结构：扇区（Sector）"></a><strong>二、NFC 标签的存储结构：扇区（Sector）</strong></h3><ol>
+<li><strong>物理存储划分</strong><ul>
+<li>NFC 标签（如常见的 MIFARE Classic 系列）的存储空间被划分为多个 <strong>扇区（Sector）</strong>，每个扇区进一步分为多个 <strong>块（Block）</strong>。</li>
+<li>示例：MIFARE Classic 1K 包含 <strong>16 个扇区</strong>，每个扇区有 <strong>4 个块</strong>（共 64 块），每块 16 字节。</li>
+</ul>
+</li>
+<li><strong>扇区的关键功能</strong><ul>
+<li><strong>数据块</strong>：存储实际数据（如门禁信息、支付金额）。</li>
+<li><strong>扇区尾（Sector Trailer）</strong>：每个扇区的最后一个块，包含：<ul>
+<li><strong>密钥 A 和密钥 B</strong>：用于访问控制的加密密钥。</li>
+<li><strong>访问控制位（Access Bits）</strong>：定义该扇区的读写权限（如是否需要密钥验证）。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="三、扇区加密的意义与实现"><a href="#三、扇区加密的意义与实现" class="headerlink" title="三、扇区加密的意义与实现"></a><strong>三、扇区加密的意义与实现</strong></h3><ol>
+<li><strong>加密目的</strong><ul>
+<li><strong>权限隔离</strong>：不同扇区可设置独立密钥，实现多应用共存（如一张卡同时用于门禁和公交支付，不同管理方控制不同扇区）。</li>
+<li><strong>防篡改与防克隆</strong>：通过密钥保护敏感数据，防止未授权读取或修改。</li>
+</ul>
+</li>
+<li><strong>加密机制</strong><ul>
+<li><strong>认证流程</strong>：<ol>
+<li>读卡器发送认证请求至标签。</li>
+<li>标签返回随机数，读卡器用密钥加密后回传。</li>
+<li>标签验证加密结果，确认合法性（如 MIFARE Classic 使用 <strong>CRYPTO1 算法</strong>）。</li>
+</ol>
+</li>
+<li><strong>访问控制位</strong>：决定操作（读&#x2F;写）是否需要密钥 A 或密钥 B，或完全禁止。</li>
+</ul>
+</li>
+<li><strong>典型攻击与防护</strong><ul>
+<li><strong>嗅探攻击</strong>：通过监听通信破解密钥（早期 MIFARE Classic 存在漏洞）。</li>
+<li><strong>防御措施</strong>：升级加密算法（如 MIFARE Plus 使用 AES 加密）、动态密钥等。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="四、实际应用场景"><a href="#四、实际应用场景" class="headerlink" title="四、实际应用场景"></a><strong>四、实际应用场景</strong></h3><ol>
+<li><p><strong>多应用场景</strong></p>
+<ul>
+<li>例如，校园一卡通可能分配：<ul>
+<li>扇区 0：学生身份信息（由学校管理，密钥 A 加密）。</li>
+<li>扇区 1：食堂储值（由餐饮公司管理，密钥 B 加密）。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>安全设计建议</strong></p>
+<ul>
+<li>避免使用默认密钥（如 MIFARE Classic 的默认密钥易被破解）。</li>
+<li>定期更新密钥，结合动态数据验证（如交易计数器）。</li>
+</ul>
+</li>
+<li><p><strong>防克隆机制</strong></p>
+<ul>
+<li><strong>滚动码系统</strong>：每次刷卡后卡内计数器更新，克隆卡无法同步，导致失效。</li>
+<li><strong>全卡签名校验</strong>：系统验证全卡数据哈希，仅克隆部分扇区无效。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="五、NFC卡片种类"><a href="#五、NFC卡片种类" class="headerlink" title="五、NFC卡片种类"></a>五、NFC卡片种类</h3><p>在 NFC 卡中，<strong>UID 卡、CUID 卡和 UFUID 卡</strong>是三类常见的可编程复制卡（俗称“空白卡”或“克隆卡”），主要用于模拟或复制其他 NFC 卡的 UID（唯一标识符）或数据。以下是它们的区别和典型用途：</p>
+<h5 id="1-UID-卡（普通-UID-卡）"><a href="#1-UID-卡（普通-UID-卡）" class="headerlink" title="1. UID 卡（普通 UID 卡）"></a><strong>1. UID 卡（普通 UID 卡）</strong></h5><ul>
+<li><strong>核心特性</strong>：<ul>
+<li><strong>UID 可写</strong>：支持一次性修改 UID（某些版本可多次修改）。</li>
+<li><strong>兼容性</strong>：基于 MIFARE Classic 1K 的模拟，兼容大多数仅验证 UID 的低安全系统（如老旧门禁）。</li>
+<li><strong>限制</strong>：<ul>
+<li>UID 修改后无法还原（某些型号支持有限次数的擦写）。</li>
+<li>可能被支持 <strong>防克隆机制</strong> 的读卡器检测为克隆卡（例如校验 UID 是否与厂商标志位匹配）。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>应用场景</strong>：<ul>
+<li>复制仅依赖 UID 验证的简单门禁卡、停车卡。</li>
+<li>低成本实验或原型开发。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h5 id="2-CUID-卡（可擦写-UID-卡）"><a href="#2-CUID-卡（可擦写-UID-卡）" class="headerlink" title="2. CUID 卡（可擦写 UID 卡）"></a><strong>2. CUID 卡（可擦写 UID 卡）</strong></h5><ul>
+<li><strong>核心特性</strong>：<ul>
+<li><strong>UID 可重复擦写</strong>：支持多次修改 UID（例如通过 Proxmark3 或特定读卡器）。</li>
+<li><strong>绕过部分防克隆检测</strong>：某些 CUID 卡能模拟原厂卡的 UID 写入方式（如“Gen2”魔术卡），避免被读卡器识别为克隆卡。</li>
+<li><strong>兼容性</strong>：支持更广泛的系统（如某些新版门禁、电梯控制系统）。</li>
+</ul>
+</li>
+<li><strong>应用场景</strong>：<ul>
+<li>复制需 UID 验证且具备简单防克隆机制的系统（如某些小区门禁）。</li>
+<li>需要多次修改 UID 的测试场景。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h5 id="3-UFUID-卡（超频-UID-卡-高级可编程卡）"><a href="#3-UFUID-卡（超频-UID-卡-高级可编程卡）" class="headerlink" title="3. UFUID 卡（超频 UID 卡&#x2F;高级可编程卡）"></a><strong>3. UFUID 卡（超频 UID 卡&#x2F;高级可编程卡）</strong></h5><ul>
+<li><strong>核心特性</strong>：<ul>
+<li><strong>动态 UID 支持</strong>：部分 UFUID 卡支持“动态 UID”模式，在每次通信时返回不同 UID，绕过高级防重放攻击。</li>
+<li><strong>抗干扰与兼容性</strong>：<ul>
+<li>优化射频性能，减少读写失败率。</li>
+<li>兼容更复杂的系统（如某些加密卡或需双向认证的场景）。</li>
+</ul>
+</li>
+<li><strong>高级功能</strong>：部分 UFUID 卡支持模拟非标协议（如 EM4305）。</li>
+</ul>
+</li>
+<li><strong>应用场景</strong>：<ul>
+<li>对抗具备动态 UID 检测或滚动码机制的系统（如高端门禁、智能锁）。</li>
+<li>需要高稳定性和抗干扰能力的工业环境。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h5 id="三者对比总结"><a href="#三者对比总结" class="headerlink" title="三者对比总结"></a><strong>三者对比总结</strong></h5><table>
+<thead>
+<tr>
+<th align="left"><strong>特性</strong></th>
+<th align="left"><strong>UID 卡</strong></th>
+<th align="left"><strong>CUID 卡</strong></th>
+<th align="left"><strong>UFUID 卡</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>UID 修改次数</strong></td>
+<td align="left">单次&#x2F;有限次</td>
+<td align="left">多次</td>
+<td align="left">多次（支持动态 UID）</td>
+</tr>
+<tr>
+<td align="left"><strong>防克隆绕过能力</strong></td>
+<td align="left">弱</td>
+<td align="left">中等</td>
+<td align="left">强</td>
+</tr>
+<tr>
+<td align="left"><strong>兼容性</strong></td>
+<td align="left">低安全系统（老旧设备）</td>
+<td align="left">中等安全系统（新版门禁）</td>
+<td align="left">高安全系统（动态 UID 检测）</td>
+</tr>
+<tr>
+<td align="left"><strong>典型用途</strong></td>
+<td align="left">简单复制</td>
+<td align="left">常规克隆与测试</td>
+<td align="left">对抗高级安全机制</td>
+</tr>
+</tbody></table>
+<h3 id="六、PN532和NFC卡模拟-仅针对UID卡"><a href="#六、PN532和NFC卡模拟-仅针对UID卡" class="headerlink" title="六、PN532和NFC卡模拟(仅针对UID卡)"></a>六、PN532和NFC卡模拟(仅针对UID卡)</h3><h3 id="现代NFC设备已支持自动模拟”加密卡0扇区-加密卡卡号-”，实现门禁卡的功能，本小节内容可以忽略！！！"><a href="#现代NFC设备已支持自动模拟”加密卡0扇区-加密卡卡号-”，实现门禁卡的功能，本小节内容可以忽略！！！" class="headerlink" title="(现代NFC设备已支持自动模拟”加密卡0扇区(加密卡卡号)”，实现门禁卡的功能，本小节内容可以忽略！！！)"></a>(现代NFC设备已支持自动模拟”加密卡0扇区(加密卡卡号)”，实现门禁卡的功能，本小节内容可以忽略！！！)</h3><p><strong>PN532</strong> 是恩智浦（NXP）推出的 <strong>高性能 NFC 芯片</strong>，支持以下功能：</p>
+<ul>
+<li><p><strong>协议兼容性</strong>：ISO&#x2F;IEC 14443 Type A&#x2F;B（MIFARE、NTAG）、FeliCa、ISO 18092（NFC 点对点）。</p>
+</li>
+<li><p><strong>工作模式</strong>：读卡器（读写 NFC 标签）、卡模拟（模拟为 NFC 卡）、点对点通信。</p>
+</li>
+<li><p><strong>常见硬件形态</strong>：开发板（如 PN532 模块、Arduino NFC Shield）、手机维修工具（如 Proxmark3 的替代品）。</p>
+</li>
+</ul>
+<p>由于加密的防克隆的特性，</p>
+<h4 id="克隆加密-UID-卡-0-扇区-UID-的步骤"><a href="#克隆加密-UID-卡-0-扇区-UID-的步骤" class="headerlink" title="克隆加密 UID 卡 0 扇区(UID)的步骤"></a><strong>克隆加密 UID 卡 0 扇区(UID)的步骤</strong></h4><h4 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a><strong>前提条件</strong></h4><ol>
+<li><strong>硬件准备</strong>：<ul>
+<li>PN532 模块（通过 USB、UART 或 I2C 连接电脑）。</li>
+<li>一张加密的原卡（需克隆的 UID 卡）。</li>
+<li>一张空白可写卡（如 UID 卡、CUID 卡或 FUID 卡）。</li>
+</ul>
+</li>
+<li><strong>软件工具</strong>：<ul>
+<li><strong>MIFARE Classic Tool (MCT)</strong>（Android 端，需 OTG 支持）。</li>
+<li><strong>libnfc</strong> 或 <strong>nfcpy</strong>（PC 端，需驱动支持）。</li>
+<li><strong>mfoc&#x2F;mfcuk</strong>（用于破解 MIFARE Classic 加密密钥）。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="步骤-1：读取原卡数据"><a href="#步骤-1：读取原卡数据" class="headerlink" title="步骤 1：读取原卡数据"></a><strong>步骤 1：读取原卡数据</strong></h4><ol>
+<li><p><strong>连接 PN532</strong>：</p>
+<ul>
+<li>将 PN532 模块通过 USB 或串口连接至电脑&#x2F;手机，确保驱动正常。</li>
+<li>在 MIFARE Classic Tool（Android）或 <code>nfc-list</code>（PC）中检测设备是否就绪。</li>
+</ul>
+</li>
+<li><p><strong>读取原卡 UID 和扇区 0</strong>：</p>
+<ul>
+<li>打开 MCT，将原卡贴近 PN532，选择 <strong>“读标签”</strong>。</li>
+<li>如果扇区 0 加密，工具会提示需要密钥（如 <code>FFFFFFFFFFFF</code> 是默认密钥，但加密卡可能已修改）。</li>
+</ul>
+</li>
+<li><p><strong>破解扇区 0 的密钥</strong>（若加密）：</p>
+<ul>
+<li><p><strong>使用 mfoc</strong>（PC 端）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mfoc -O dump.mfd  <span class="comment"># 尝试破解密钥并导出数据</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>使用 MCT 的密钥嗅探功能</strong>（需多次刷卡触发密钥验证过程）。</p>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="步骤-2：克隆到空白卡"><a href="#步骤-2：克隆到空白卡" class="headerlink" title="步骤 2：克隆到空白卡"></a><strong>步骤 2：克隆到空白卡</strong></h4><ol>
+<li><strong>写入 UID</strong>：<ul>
+<li>选择空白卡类型：<ul>
+<li><strong>UID 卡</strong>：支持修改 UID，但可能被防克隆机制检测。</li>
+<li><strong>CUID&#x2F;FUID 卡</strong>：更隐蔽，适合对抗简单防克隆系统。</li>
+</ul>
+</li>
+<li>在 MCT 中选择 <strong>“写标签”</strong> → <strong>“写 UID”</strong>，输入原卡 UID。</li>
+</ul>
+</li>
+<li><strong>写入扇区 0 数据</strong>：<ul>
+<li>如果扇区 0 未加密（仅 UID 被校验）：<ul>
+<li>直接使用 MCT 的 <strong>“写扇区”</strong> 功能，将原卡扇区 0 数据写入空白卡。</li>
+</ul>
+</li>
+<li>如果扇区 0 加密：<ul>
+<li>需将破解的密钥（如 <code>A0A1A2A3A4A5</code>）与数据一起写入，并在空白卡中设置相同的访问控制位。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>验证克隆结果</strong>：<ul>
+<li>使用读卡器验证新卡的 UID 和扇区 0 数据是否与原卡一致。</li>
+<li>测试门禁系统是否识别（某些系统可能校验全卡数据，需克隆更多扇区）</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/05/07/NFC%E7%9F%A5%E8%AF%86/" data-id="cmaep75e100046s63aeoa4jsb" data-title="NFC知识" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-搭建题库反思" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/04/15/%E6%90%AD%E5%BB%BA%E9%A2%98%E5%BA%93%E5%8F%8D%E6%80%9D/" class="article-date">
+  <time class="dt-published" datetime="2025-04-15T07:00:00.000Z" itemprop="datePublished">2025-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/04/15/%E6%90%AD%E5%BB%BA%E9%A2%98%E5%BA%93%E5%8F%8D%E6%80%9D/">搭建题库的反思</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="反思："><a href="#反思：" class="headerlink" title="反思："></a>反思：</h3><ul>
+<li><p><strong>项目实现思路不明确</strong>：项目实现方法有多种，如果想要快速实现部署，必须挑选一种实现方式。例如本次项目，实现方式有：</p>
+<ol>
+<li>网上寻找题库，将txt文件清洗，转为csv格式，导入数据库，搭建一个后端API，写出实现逻辑，包括了模糊查询（文本匹配）。</li>
+</ol>
+<ul>
+<li>优点：答案稳定，正确率较高。</li>
+<li>缺点：开发逻辑复杂，流程长，使用技术较多。</li>
+</ul>
+<ol start="2">
+<li>利用curl请求的方式连接AIGC的API，通过ai答题，并解析答案，自动做选择。</li>
+</ol>
+<ul>
+<li>优点：通用语言大模型对题目适配度高，可以自己做题。</li>
+<li>缺点：大模型答案正确率不确定，返回格式不稳定，导致答案无法正常解析。并且无法正常debug，开发过程有难点。</li>
+</ul>
+<ol start="3">
+<li>通过SDK的方式接入AIGC的API，搭建一个后端API桥接，解析答案，返回前端。</li>
+</ol>
+<ul>
+<li>优点：对比直接curl，可以进行debug，答案解析更加智能。</li>
+<li>缺点：资源占用高，整体效率低。</li>
+</ul>
+<p>  没有确定实现方法，导致整体开发效率低下。</p>
+</li>
+<li><p><strong>对开发者文档没有深入理解，导致开发时阻碍较多</strong>：</p>
+<ul>
+<li>对**特殊占位符(例如：’${placeholder}’)**理解不够深入。</li>
+<li>自定义解析没有仔细查看。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span>(<span class="params">env</span>)=&gt;&#123;env.<span class="property">title</span>.<span class="title function_">replace</span>(xx,xx);&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>没能即时查看开发者社区，在社区中有很多解答。</strong></p>
+</li>
+<li><p><strong>对一个快速部署项目，没有使用熟悉工具和框架</strong>：尝试使用python flask，结果因为不熟悉Falsk和SQLServer ODBC，导致浪费时间。</p>
+</li>
+<li><p><strong>对必要开发工具不够熟悉</strong>：应该在开发时利用ai深入理解，例如.net的MapGet()函数构建最小API，<a target="_blank" rel="noopener" href="https://www.jsonlint.com/">JSON格式验证网站</a>，Curl请求API和SDK请求API的区别，Curl请求的使用方法。</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/04/15/%E6%90%AD%E5%BB%BA%E9%A2%98%E5%BA%93%E5%8F%8D%E6%80%9D/" data-id="cmaep75e300086s63btnggu71" data-title="搭建题库的反思" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-分区" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/04/07/%E5%88%86%E5%8C%BA/" class="article-date">
+  <time class="dt-published" datetime="2025-04-07T02:00:00.000Z" itemprop="datePublished">2025-04-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/04/07/%E5%88%86%E5%8C%BA/">文件系统,分区表和分区</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="一、文件系统（File-System）"><a href="#一、文件系统（File-System）" class="headerlink" title="一、文件系统（File System）"></a><strong>一、文件系统（File System）</strong></h3><p><strong>文件系统</strong>是操作系统用来管理存储设备（如硬盘、U盘等）上文件的机制。它定义了数据的存储、检索、更新和删除方式。不同的文件系统有不同的特性和适用场景。</p>
+<h4 id="常见文件系统类型："><a href="#常见文件系统类型：" class="headerlink" title="常见文件系统类型："></a><strong>常见文件系统类型</strong>：</h4><ol>
+<li><p><strong>FAT32</strong>：</p>
+<ul>
+<li><strong>特点</strong>：兼容性强（Windows、Linux、Mac、游戏机等均支持），但单个文件不能超过4GB。</li>
+<li><strong>适用场景</strong>：U盘、SD卡等移动设备（需跨平台兼容时）。</li>
+</ul>
+</li>
+<li><p><strong>NTFS</strong>：</p>
+<ul>
+<li><strong>特点</strong>：Windows默认文件系统，支持大文件（TB级）、权限管理、日志功能（防止数据损坏）。</li>
+<li><strong>适用场景</strong>：Windows系统盘、大容量硬盘。</li>
+</ul>
+</li>
+<li><p><strong>exFAT</strong>：</p>
+<ul>
+<li><strong>特点</strong>：微软专为闪存设计，支持大文件和大分区，兼容性较好（需驱动支持旧系统）。</li>
+<li><strong>适用场景</strong>：大容量U盘、外置硬盘（跨平台使用）。</li>
+</ul>
+</li>
+<li><p><strong>ext4</strong>：</p>
+<ul>
+<li><strong>特点</strong>：Linux默认文件系统，支持日志功能、大文件和大分区。</li>
+<li><strong>适用场景</strong>：Linux系统盘和数据存储。</li>
+</ul>
+</li>
+<li><p><strong>APFS</strong>：</p>
+<ul>
+<li><strong>特点</strong>：苹果专为SSD优化的文件系统，支持快照、加密和高效存储。</li>
+<li><strong>适用场景</strong>：macOS系统盘。</li>
+</ul>
+</li>
+<li><p><strong>HFS+</strong>：</p>
+<ul>
+<li><strong>特点</strong>：苹果旧版文件系统，逐步被APFS取代。</li>
+<li><strong>适用场景</strong>：旧版Mac设备。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="二、分区表类型（Partition-Table）"><a href="#二、分区表类型（Partition-Table）" class="headerlink" title="二、分区表类型（Partition Table）"></a><strong>二、分区表类型（Partition Table）</strong></h3><p><strong>分区表</strong>是存储设备上的数据结构，记录了磁盘分区的布局（如分区的起始位置、大小等）。常见的分区表类型有 <strong>MBR</strong> 和 <strong>GPT</strong>。</p>
+<h4 id="1-MBR（Master-Boot-Record）"><a href="#1-MBR（Master-Boot-Record）" class="headerlink" title="1. MBR（Master Boot Record）"></a><strong>1. MBR（Master Boot Record）</strong></h4><ul>
+<li><strong>特点</strong>：<ul>
+<li>旧标准，兼容所有操作系统。</li>
+<li>最大支持2TB磁盘，最多4个主分区（或3主分区+1扩展分区）。</li>
+<li>扩展分区内可划分多个逻辑分区。</li>
+</ul>
+</li>
+<li><strong>缺点</strong>：<ul>
+<li>2TB容量限制。</li>
+<li>分区信息存储在单一位置（MBR损坏可能导致数据丢失）。</li>
+</ul>
+</li>
+<li><strong>适用场景</strong>：旧电脑、Legacy BIOS启动的机器。</li>
+</ul>
+<h4 id="2-GPT（GUID-Partition-Table）"><a href="#2-GPT（GUID-Partition-Table）" class="headerlink" title="2. GPT（GUID Partition Table）"></a><strong>2. GPT（GUID Partition Table）</strong></h4><ul>
+<li><strong>特点</strong>：<ul>
+<li>新标准，支持UEFI启动。</li>
+<li>支持超过2TB的磁盘，最多128个主分区（取决于操作系统）。</li>
+<li>分区信息存储多份，冗余备份更安全。</li>
+</ul>
+</li>
+<li><strong>优点</strong>：<ul>
+<li>无容量限制，支持现代大容量硬盘。</li>
+<li>支持UEFI启动（新电脑默认使用）。</li>
+</ul>
+</li>
+<li><strong>适用场景</strong>：新电脑、大容量硬盘、UEFI启动的机器。</li>
+</ul>
+<hr>
+<h3 id="三、分区类型（Partition-Type）"><a href="#三、分区类型（Partition-Type）" class="headerlink" title="三、分区类型（Partition Type）"></a><strong>三、分区类型（Partition Type）</strong></h3><p><strong>分区类型</strong>指分区的具体用途或文件系统类型。不同操作系统用不同的标识符（如分区ID）标记分区类型。</p>
+<h4 id="常见分区类型："><a href="#常见分区类型：" class="headerlink" title="常见分区类型："></a><strong>常见分区类型</strong>：</h4><ol>
+<li><p><strong>主分区（Primary Partition）</strong>：</p>
+<ul>
+<li>直接用于安装操作系统或存储数据。</li>
+<li>MBR最多支持4个主分区，GPT无限制。</li>
+</ul>
+</li>
+<li><p><strong>扩展分区（Extended Partition）</strong>：</p>
+<ul>
+<li>MBR专用，用于突破4主分区的限制。</li>
+<li>扩展分区本身不存储数据，仅作为容器，内部可划分多个逻辑分区。</li>
+</ul>
+</li>
+<li><p><strong>逻辑分区（Logical Partition）</strong>：</p>
+<ul>
+<li>位于扩展分区内，用于存储数据（MBR特有）。</li>
+</ul>
+</li>
+<li><p><strong>特殊功能分区</strong>：</p>
+<ul>
+<li><strong>EFI系统分区（ESP）</strong>：GPT分区表中用于存放UEFI启动文件（FAT32格式）。</li>
+<li><strong>Linux Swap</strong>：Linux系统的交换分区（类似虚拟内存）。</li>
+<li><strong>Microsoft Reserved（MSR）</strong>：Windows保留分区（GPT专用）。</li>
+<li><strong>BIOS Boot</strong>：GPT中用于Legacy BIOS启动的分区。</li>
+</ul>
+</li>
+</ol>
+<h4 id="分区类型标识符（ID）示例："><a href="#分区类型标识符（ID）示例：" class="headerlink" title="分区类型标识符（ID）示例："></a><strong>分区类型标识符（ID）示例</strong>：</h4><ul>
+<li><code>0x83</code>：Linux文件系统（ext4等）。</li>
+<li><code>0x82</code>：Linux Swap。</li>
+<li><code>0xEF</code>：EFI系统分区。</li>
+<li><code>0x07</code>：NTFS或exFAT（Windows）。</li>
+<li><code>0x0C</code>：FAT32。</li>
+</ul>
+<hr>
+<h3 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a><strong>四、总结</strong></h3><ol>
+<li><strong>文件系统</strong>决定了数据如何存储（如NTFS、ext4）。</li>
+<li><strong>分区表</strong>（MBR&#x2F;GPT）决定了磁盘如何划分分区。</li>
+<li><strong>分区类型</strong>定义了分区的具体用途（如主分区、EFI分区）。</li>
+</ol>
+<h4 id="实际应用建议："><a href="#实际应用建议：" class="headerlink" title="实际应用建议："></a><strong>实际应用建议</strong>：</h4><ul>
+<li><strong>Windows新电脑</strong>：GPT分区表 + NTFS文件系统 + UEFI启动。</li>
+<li><strong>Linux系统</strong>：GPT分区表 + ext4文件系统 + EFI分区。</li>
+<li><strong>跨平台U盘</strong>：MBR分区表 + exFAT&#x2F;FAT32文件系统。</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/04/07/%E5%88%86%E5%8C%BA/" data-id="cmaep75e000036s63hem2a6cf" data-title="文件系统,分区表和分区" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-投资笔记" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/03/18/%E6%8A%95%E8%B5%84%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time class="dt-published" datetime="2025-03-18T07:00:00.000Z" itemprop="datePublished">2025-03-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/03/18/%E6%8A%95%E8%B5%84%E7%AC%94%E8%AE%B0/">投资想法</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="投资笔记"><a href="#投资笔记" class="headerlink" title="投资笔记"></a>投资笔记</h1><h2 id="此内容纯为个人想法，无任何经济学基础，仅作参考！！！"><a href="#此内容纯为个人想法，无任何经济学基础，仅作参考！！！" class="headerlink" title="此内容纯为个人想法，无任何经济学基础，仅作参考！！！"></a>此内容纯为个人想法，无任何经济学基础，仅作参考！！！</h2><h2 id="此内容纯为个人想法，无任何经济学基础，仅作参考！！！-1"><a href="#此内容纯为个人想法，无任何经济学基础，仅作参考！！！-1" class="headerlink" title="此内容纯为个人想法，无任何经济学基础，仅作参考！！！"></a>此内容纯为个人想法，无任何经济学基础，仅作参考！！！</h2><h2 id="此内容纯为个人想法，无任何经济学基础，仅作参考！！！-2"><a href="#此内容纯为个人想法，无任何经济学基础，仅作参考！！！-2" class="headerlink" title="此内容纯为个人想法，无任何经济学基础，仅作参考！！！"></a>此内容纯为个人想法，无任何经济学基础，仅作参考！！！</h2><p>投资应将长线和短线彻底划分开来，方法理念完全不相同，短线更应该叫做投机。</p>
+<h3 id="长线投资"><a href="#长线投资" class="headerlink" title="长线投资"></a>长线投资</h3><p>进行长线投资主要以高股息股票为主。年化利率为<strong>股息支付率(%)÷PE</strong>,年化收益率通常超过6%。</p>
+<h4 id="长线投资时可以分为两大类，周期性类与大盘类。"><a href="#长线投资时可以分为两大类，周期性类与大盘类。" class="headerlink" title="长线投资时可以分为两大类，周期性类与大盘类。"></a>长线投资时可以分为两大类，周期性类与大盘类。</h4><ol>
+<li><strong>周期性类</strong></li>
+</ol>
+<ul>
+<li><p>常见行业：大宗商品，如煤炭，钢铁，船舶。</p>
+</li>
+<li><p>行业特征：产品价格呈周期性波动的，产品的市场价格是企业赢利的基础。 在市场经济情况下，产品价格形成的基础是供求关系，而不是成本，成本只是产品最低价的稳定器，但不是决定的基础。</p>
+</li>
+<li><p>投资思路：尝试分析未来供给需求，买入后长期持有，可以不断少量补仓和持续定投，直至不看好行业后卖出。</p>
+</li>
+</ul>
+<ol start="2">
+<li><strong>跟随大盘类</strong></li>
+</ol>
+<ul>
+<li>常见行业：日用品。</li>
+<li>行业特征：产品供需关系稳定，企业经营良好，但发展前景不明朗，想象空间差，股价较为稳定，跟大盘关系紧密。</li>
+<li>投资思路：在大盘表现差的时候买入（大盘表现差为，指数与现实发展基本面结合，指数低于基本面预期），在真正触底前不要轻易加仓，当大盘高于基本面预期时，逐步减仓，减仓后不要再轻易买入。</li>
+</ul>
+<h3 id="短线投资"><a href="#短线投资" class="headerlink" title="短线投资"></a>短线投资</h3><p>短线投资追求快进快出，及时止损，超短线应该按照计划走，不上头，不留恋。埋伏型短线时间也通常不超过一年。</p>
+<h4 id="短线投资可以分为追热点型短线和埋伏型短线"><a href="#短线投资可以分为追热点型短线和埋伏型短线" class="headerlink" title="短线投资可以分为追热点型短线和埋伏型短线"></a>短线投资可以分为追热点型短线和埋伏型短线</h4><ol>
+<li><strong>追热点短线</strong></li>
+</ol>
+<ul>
+<li>追逐当前热点，判断短期形式，风险高，亏钱概率高，不适合大多数人。可以通过淘股吧等软件适当参考大佬方向，适当抄作业。</li>
+</ul>
+<ol start="2">
+<li><strong>埋伏短线</strong></li>
+</ol>
+<ul>
+<li>短线投资应该以埋伏式为主，只看好自己熟知的行业，建立对他人信息差来埋伏相关产业，在大盘危险的时候，不适合立马投入，注意规避风险。</li>
+</ul>
+<hr>
+<hr>
+<p>25.5.7更新</p>
+<p>股息计算：</p>
+<p><strong>PE市盈率倍数</strong>: P&#x2F;E（每股股价&#x2F;每股净利润）</p>
+<p><strong>Profit利润占市值比例</strong>: 1 &#x2F; PE * 100%</p>
+<p><strong>DPR股息支付率</strong>: 20%~50%（可以查看历史支付率，良好企业估算可取35%左右）</p>
+<p><strong>AROR年化收益率</strong>: 1 &#x2F; x * DPR</p>
+<p>在认为短期内有行情，但是大盘在高点时，进场一定要慢一定要慢，高点买入非常危险。</p>
+<p>股票投资股票一定要<strong>拉长周期</strong>，增加<strong>实际影响因素</strong>，减少主观推断。拉长周期后，<strong>仓位管理</strong>非常重要，下降时轻微加仓，稳定后再加仓，卖出后的其余时间保持小仓位，只要在上涨时仓位高于平时仓位，就能显著提升胜率。</p>
+<!-- 更新日志 -->
+
+<blockquote>
+<p><strong>2025-5-7 更新</strong></p>
+<p>增加了一些想法和感受</p>
+<p>补充了一些计算方法</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/03/18/%E6%8A%95%E8%B5%84%E7%AC%94%E8%AE%B0/" data-id="cmaep75dz00026s63b5zf3nvz" data-title="投资想法" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-多拨和链路聚合" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/03/18/%E5%A4%9A%E6%8B%A8%E5%92%8C%E9%93%BE%E8%B7%AF%E8%81%9A%E5%90%88/" class="article-date">
+  <time class="dt-published" datetime="2025-03-18T07:00:00.000Z" itemprop="datePublished">2025-03-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/03/18/%E5%A4%9A%E6%8B%A8%E5%92%8C%E9%93%BE%E8%B7%AF%E8%81%9A%E5%90%88/">多拨和链路聚合</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="多拨和链路聚合"><a href="#多拨和链路聚合" class="headerlink" title="多拨和链路聚合"></a>多拨和链路聚合</h1><hr>
+<h3 id="一、多拨（Multi-WAN）"><a href="#一、多拨（Multi-WAN）" class="headerlink" title="一、多拨（Multi-WAN）"></a>一、多拨（Multi-WAN）</h3><p><strong>核心目标</strong>：通过建立<strong>多个独立的WAN连接</strong>（如PPPoE拨号），突破单条宽带线路的带宽限制，<strong>提升外网带宽</strong>。分为<strong>虚拟多拨</strong>和<strong>实线多拨</strong>。</p>
+<p><strong>1. 虚拟多拨</strong>，这也是目前使用最多的一种方式，但已经有了较大限制。</p>
+<ul>
+<li><strong>原理：<strong>拿少数的宽带和账号，使用 OpenWRT等固件</strong>模拟多个端口</strong>在<strong>同一物理网口上</strong>并发拨号，从而获得更多的“虚拟”宽带，随后进行负载均衡，以此获得网速叠加。需要虚拟化技术，是一种单线多拨。</li>
+<li>**限制：**多数运营商会检测并发会话，采取以下限制：<ul>
+<li><strong>带宽共享</strong>：多拨后总带宽仍为单线上限（如500Mbps双拨仍为500Mbps）。</li>
+<li><strong>会话数限制</strong>：强制后拨连接踢掉先拨连接，导致仅单线生效。</li>
+<li><strong>账号封禁</strong>：频繁多拨可能触发风控，临时冻结账号。</li>
+</ul>
+</li>
+</ul>
+<p><strong>2. 实线多拨</strong>，是一种稳定的合规的多拨形式。</p>
+<ul>
+<li>**原理：**需要多个宽带账号，使用多根物理网线，这些网线可以来自同一运营商，也可以来自不同运营商。然后通过负载均衡设备，例如软路由，把多条线路的带宽进行整合。这种方式通常不需要依赖虚拟技术，而是直接通过多个物理接口来实现带宽叠加。</li>
+</ul>
+<hr>
+<h4 id="1-应用场景"><a href="#1-应用场景" class="headerlink" title="1. 应用场景"></a><strong>1. 应用场景</strong></h4><ul>
+<li><strong>家庭&#x2F;小型企业</strong>：运营商宽带套餐有带宽上限（如500Mbps），通过多拨叠加到1Gbps。</li>
+<li><strong>多ISP冗余</strong>：同时接入电信和联通宽带，避免单运营商故障导致断网。</li>
+</ul>
+<h4 id="2-实际效果"><a href="#2-实际效果" class="headerlink" title="2. 实际效果"></a><strong>2. 实际效果</strong></h4><ul>
+<li><strong>带宽叠加条件</strong>：<ul>
+<li><strong>运营商策略开放</strong>：允许同一账号并发拨号且不限制带宽池（如某些地区的电信宽带）。</li>
+<li><strong>测速验证</strong>：通过多线程下载或SpeedTest测试，若双拨后速度接近翻倍则为成功。</li>
+</ul>
+</li>
+<li><strong>典型案例</strong>：<ul>
+<li>用户使用OpenWRT路由器，单线双拨后，下载速度从500Mbps提升至900Mbps（接近物理网口上限1Gbps）。</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-局限性"><a href="#3-局限性" class="headerlink" title="3. 局限性"></a><strong>3. 局限性</strong></h4><ul>
+<li><p><strong>运营商封堵</strong>：部分运营商会检测并发拨号，强制下线多余连接（如移动宽带常见）。</p>
+</li>
+<li><p><strong>IP地址冲突</strong>：不同WAN的公网IP可能影响部分服务（如在线游戏、远程访问）。</p>
+</li>
+</ul>
+<hr>
+<hr>
+<h3 id="二、链路聚合（Link-Aggregation）"><a href="#二、链路聚合（Link-Aggregation）" class="headerlink" title="二、链路聚合（Link Aggregation）"></a>二、链路聚合（Link Aggregation）</h3><p><strong>核心目标</strong>：将<strong>多个物理端口绑定为单一逻辑通道</strong>，<strong>提升内网设备间传输带宽和可靠性</strong>。</p>
+<ul>
+<li><strong>原理：</strong><ul>
+<li><strong>流量分发</strong>：基于MAC地址、IP或端口号的哈希算法分配流量。</li>
+<li><strong>冗余容错</strong>：某条物理链路故障时，流量自动迁移至其他链路。</li>
+</ul>
+</li>
+</ul>
+<h4 id="1-应用场景-1"><a href="#1-应用场景-1" class="headerlink" title="1. 应用场景"></a><strong>1. 应用场景</strong></h4><ul>
+<li><strong>服务器与交换机互联</strong>：通过4x1Gbps链路聚合实现4Gbps带宽，避免NAS或服务器成为瓶颈。</li>
+<li><strong>核心网络设备互联</strong>：交换机间通过聚合链路提升主干带宽。</li>
+</ul>
+<h4 id="2-实际效果-1"><a href="#2-实际效果-1" class="headerlink" title="2. 实际效果"></a><strong>2. 实际效果</strong></h4><ul>
+<li><strong>带宽提升</strong>：<ul>
+<li>聚合后的总带宽&#x3D;单端口带宽×可用链路数（如2x1Gbps聚合后理论带宽2Gbps）。</li>
+<li><strong>注意</strong>：单条TCP连接仍受限于单端口带宽（如单个文件下载最高1Gbps）。</li>
+</ul>
+</li>
+<li><strong>典型案例</strong>：<ul>
+<li>企业使用支持LACP的交换机和NAS，通过2条10Gbps光纤聚合，实现20Gbps内网传输。</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-局限性-1"><a href="#3-局限性-1" class="headerlink" title="3. 局限性"></a><strong>3. 局限性</strong></h4><ul>
+<li><p><strong>硬件要求</strong>：需交换机、路由器、终端设备均支持聚合协议。</p>
+</li>
+<li><p><strong>配置复杂度</strong>：需两端设备匹配聚合模式（LACP&#x2F;静态）。</p>
+</li>
+</ul>
+<h2 id="三、两者对比"><a href="#三、两者对比" class="headerlink" title="三、两者对比"></a>三、两者对比</h2><table>
+<thead>
+<tr>
+<th align="left"><strong>特性</strong></th>
+<th align="left"><strong>多拨（Multi-WAN）</strong></th>
+<th align="left"><strong>链路聚合（Link Aggregation）</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>应用场景</strong></td>
+<td align="left">外网（WAN侧），通过多个拨号连接提升带宽</td>
+<td align="left">内网（LAN侧），聚合交换机或设备间物理链路</td>
+</tr>
+<tr>
+<td align="left"><strong>技术原理</strong></td>
+<td align="left">基于PPPoE多次拨号，获取多个公网IP地址</td>
+<td align="left">基于LACP（动态聚合）或静态绑定，合并多个端口</td>
+</tr>
+<tr>
+<td align="left"><strong>带宽叠加条件</strong></td>
+<td align="left">依赖运营商策略（是否允许并发拨号及带宽叠加）</td>
+<td align="left">依赖两端设备均支持聚合协议（如LACP）</td>
+</tr>
+<tr>
+<td align="left"><strong>IP地址</strong></td>
+<td align="left">每个拨号连接独立公网IP</td>
+<td align="left">聚合后的逻辑接口共享同一IP或MAC地址</td>
+</tr>
+<tr>
+<td align="left"><strong>典型用途</strong></td>
+<td align="left">家庭&#x2F;小型企业突破单线带宽限制</td>
+<td align="left">数据中心&#x2F;企业内网提升服务器或交换机间带宽</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/03/18/%E5%A4%9A%E6%8B%A8%E5%92%8C%E9%93%BE%E8%B7%AF%E8%81%9A%E5%90%88/" data-id="cmaep75e200066s63cl701u4d" data-title="多拨和链路聚合" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-穿透组网网络拓扑思路" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/03/18/%E7%A9%BF%E9%80%8F%E7%BB%84%E7%BD%91%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91%E6%80%9D%E8%B7%AF/" class="article-date">
+  <time class="dt-published" datetime="2025-03-18T07:00:00.000Z" itemprop="datePublished">2025-03-18</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/03/18/%E7%A9%BF%E9%80%8F%E7%BB%84%E7%BD%91%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91%E6%80%9D%E8%B7%AF/">穿透和组网的网络拓扑思路</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="穿透和组网的网络拓扑思路"><a href="#穿透和组网的网络拓扑思路" class="headerlink" title="穿透和组网的网络拓扑思路"></a>穿透和组网的网络拓扑思路</h1><hr>
+<h3 id="代理模式内网穿透"><a href="#代理模式内网穿透" class="headerlink" title="代理模式内网穿透"></a>代理模式内网穿透</h3><h4 id="使用NPS（或FRP），利用反向代理，实现内网穿透（即把一台内网中设备暴露到公网中去）"><a href="#使用NPS（或FRP），利用反向代理，实现内网穿透（即把一台内网中设备暴露到公网中去）" class="headerlink" title="使用NPS（或FRP），利用反向代理，实现内网穿透（即把一台内网中设备暴露到公网中去）"></a>使用NPS（或FRP），利用反向代理，实现内网穿透（即把一台内网中设备暴露到公网中去）</h4><p>设备要求：</p>
+<ol>
+<li><p>用于桥接的公网服务器。（可以为云服务器）</p>
+</li>
+<li><p>一台内网中提供服务的服务器。</p>
+</li>
+</ol>
+<p>配置流程（以云服务器为例）</p>
+<ol>
+<li>使用workbench浏览器或第三方SSH工具（如<strong>WinSCP</strong>、<strong>PuTTY</strong>、<strong>XShell</strong>）连接到云服务器。</li>
+<li>在<strong>桥接服务器</strong>（任意带公网ip的服务器，例如云服务器）下载nps（或frp,github中即可下载）服务端，并按要求配置服务器信息，启动服务端程序。（输入命令 .&#x2F;nps start）</li>
+<li>访问<strong>桥接服务器IP地址:端口号</strong>进入管理界面，尝试登录nps，检测是否成功部署服务端程序。</li>
+<li>进入nps管理界面（即**3.**中的网址），添加一个客服端，复制这个客户端对应的带有密钥的命令。</li>
+<li>在需要被穿透、暴露在公网的服务器中下载nps客户端。在nps文件夹的可执行文件(nps.exe)文件夹中（或上一级文件夹），启动gitbash命令行，执行**4.**中复制的命令。</li>
+<li>检查nps服务界面，服务器是否成功上线。失败检查UPnP（默认开启），防火墙等。</li>
+<li>在<strong>tcp(udp)隧道</strong>中，添加<strong>转发规则</strong>。服务端端口为任意空端口（0~65535）,目标（即本地ip地址与端口）填写本地路由转发后的ip地址（ipconfig即可查看本地Ip地址，端口填写对应开放软件的端口），客户端ID为**4.**中添加的客户端ID。</li>
+</ol>
+<hr>
+<h3 id="代理模式P2P隧道配置"><a href="#代理模式P2P隧道配置" class="headerlink" title="代理模式P2P隧道配置"></a>代理模式P2P隧道配置</h3><h4 id="使用nps，在经过反向代理后，直接打通隧道，后续流量不需要桥接服务器转发，可以直接传输。"><a href="#使用nps，在经过反向代理后，直接打通隧道，后续流量不需要桥接服务器转发，可以直接传输。" class="headerlink" title="使用nps，在经过反向代理后，直接打通隧道，后续流量不需要桥接服务器转发，可以直接传输。"></a>使用nps，在经过反向代理后，直接打通隧道，后续流量不需要桥接服务器转发，可以直接传输。</h4><p>设备要求：与内网穿透相同。</p>
+<p>配置流程：</p>
+<ol>
+<li>基础配置参见内网穿透反向代理部分。</li>
+<li>重新配置服务端的配置文件。（添加p2p_ip和p2p_port）</li>
+<li>在nps管理界面中，添加一个p2p代理，目标（IP:端口）填写局域网中要想连接的设备IP地址，端口填写对应软件需要端口。客户端ID与创建客户端时保持一致，密钥填写任意字符。复制带有密钥的命令。</li>
+<li>将**3.**中复制的密钥在客户端执行。</li>
+<li>参照内网穿透部分<strong>6.</strong> **7.**部分，验证是否部署成功。</li>
+</ol>
+<hr>
+<h3 id="家庭VPN配置-（使用L2TP协议）"><a href="#家庭VPN配置-（使用L2TP协议）" class="headerlink" title="家庭VPN配置 （使用L2TP协议）"></a>家庭VPN配置 （使用L2TP协议）</h3><p>设备要求：</p>
+<ol>
+<li>具有公网IP的服务器。（如果没有可以参照<strong>代理模式的内网穿透</strong>进行配置）</li>
+<li>一台具有VPN功能的路由器（或选择软路由），并且路由器处于路由模式，而不是光猫下的桥接（公网ip必备条件）。</li>
+</ol>
+<p>配置流程：（以家用动态公网IP，路由设置为爱快软路由为例）</p>
+<ol>
+<li>购买&#x2F;租用域名，使用DDNS（动态域名解析）将动态IP地址变为稳定的域名。</li>
+<li>开启L2TP服务，设置密钥。</li>
+<li>添加套餐和登录账号和密码。（不同路由管理器叫法不同）</li>
+<li>在外网尝试是否能通过VPN（L2TP）登录，访问内网设备。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/03/18/%E7%A9%BF%E9%80%8F%E7%BB%84%E7%BD%91%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91%E6%80%9D%E8%B7%AF/" data-id="cmaep75e400096s63dq0kcth2" data-title="穿透和组网的网络拓扑思路" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-内网穿透和异地组网" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/02/21/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E5%92%8C%E5%BC%82%E5%9C%B0%E7%BB%84%E7%BD%91/" class="article-date">
+  <time class="dt-published" datetime="2025-02-21T04:02:46.000Z" itemprop="datePublished">2025-02-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/02/21/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E5%92%8C%E5%BC%82%E5%9C%B0%E7%BB%84%E7%BD%91/">内网穿透和异地组网</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="内网穿透原理"><a href="#内网穿透原理" class="headerlink" title="内网穿透原理"></a>内网穿透原理</h2><p>在实现内网穿透的方法中，对NAT设备的控制需求和是否需要第三方桥接情况各有不同，以下是具体分析： </p>
+<h3 id="需要控制NAT设备的方法"><a href="#需要控制NAT设备的方法" class="headerlink" title="需要控制NAT设备的方法"></a>需要控制NAT设备的方法</h3><ul>
+<li><strong>端口映射</strong>：此方法需要在NAT设备（如路由器）上进行手动配置，明确地将外部端口与内部设备的端口进行对应设置，以允许外部请求能正确到达内网设备，所以必须要对NAT设备有控制权限才能进行相关配置操作。 <ul>
+<li><strong>原理</strong>：在路由器或防火墙等网络设备上进行设置，将外部网络的特定端口与内部网络中特定设备的特定端口进行映射。当外部网络的请求到达路由器的公网 IP 的指定端口时，路由器会根据设置将请求转发到内部网络中对应设备的相应端口上，从而实现外部对内部设备的访问。</li>
+<li><strong>示例</strong>：假设内网中有一台服务器，其 IP 地址为 192.168.1.100，提供 Web 服务，端口为 80。通过在路由器上设置端口映射，将路由器的公网 IP 的 8080 端口映射到内网服务器的 80 端口。这样，外部用户访问路由器的公网 IP 的 8080 端口时，实际上访问的是内网中 IP 为 192.168.1.100 的服务器的 80 端口。</li>
+</ul>
+</li>
+<li><strong>NAT穿越技术</strong>：在一些情况下，尤其是当需要实现特定的、更灵活的内网穿透功能时，可能需要对NAT设备进行配置调整，比如设置特定的NAT转换规则、调整端口范围等，以确保内网设备能顺利与外网进行通信，因此也需要一定程度上控制NAT设备。<ul>
+<li><strong>原理</strong>：NAT 设备会为内部网络中的设备分配私有 IP 地址，并维护一个地址转换表，记录内部私有 IP 地址与外部公网 IP 地址之间的映射关系。当内部设备要与外部设备通信时，NAT 设备会将内部设备的私有 IP 地址转换为公网 IP 地址，使数据包能够在公网上传输。同时，当外部设备响应时，NAT 设备又会根据地址转换表，将公网 IP 地址转换回内部设备的私有 IP 地址，将数据包正确地转发给内部设备。</li>
+<li><strong>示例</strong>：家庭网络中的多台设备通过路由器连接到互联网，路由器就是一个 NAT 设备。当家里的电脑要访问互联网上的网站时，电脑使用的是内部私有 IP 地址，路由器会将电脑发出的数据包中的源 IP 地址转换为路由器的公网 IP 地址，然后发送到互联网上。当网站响应时，路由器再根据之前的映射关系，将数据包中的目的 IP 地址转换为电脑的私有 IP 地址，将数据正确地交给电脑。</li>
+</ul>
+</li>
+</ul>
+<h3 id="需要第三方桥接的方法"><a href="#需要第三方桥接的方法" class="headerlink" title="需要第三方桥接的方法"></a>需要第三方桥接的方法</h3><ul>
+<li><strong>反向代理</strong>：通常需要在公网中部署一台第三方的反向代理服务器，该服务器作为外部请求与内网服务之间的桥梁。外部用户的请求先到达反向代理服务器，再由它转发到内网服务器，然后将响应返回给外部用户，这里的反向代理服务器就是起到了第三方桥接的作用。 <ul>
+<li><strong>原理</strong>：在公网中有一台具有公网 IP 的服务器作为反向代理服务器。内网中的服务器将自己的服务信息注册到反向代理服务器上。当外部用户请求访问内网中的服务时，先将请求发送到反向代理服务器，反向代理服务器根据请求的内容和事先的配置，将请求转发到对应的内网服务器上，然后再将内网服务器的响应返回给外部用户。</li>
+<li><strong>示例</strong>：企业内部有多个业务系统，如财务系统、办公系统等，都在内网中。在公网上部署一台反向代理服务器，企业的域名解析到这台反向代理服务器。当员工在外部访问企业的财务系统时，请求先到达反向代理服务器，反向代理服务器根据请求的路径等信息，将请求转发到内网中的财务系统服务器上，获取数据后再返回给员工。</li>
+</ul>
+</li>
+<li><strong>VPN（虚拟专用网络）</strong>：一般需要借助VPN服务器来建立连接，VPN服务器作为第三方，在用户和内网之间搭建起虚拟通道。用户通过VPN客户端与VPN服务器连接，经身份验证后获得虚拟IP地址来访问内网资源，VPN服务器起到了桥接内外网络的作用。 <ul>
+<li><strong>原理</strong>：通过在公网上建立一条虚拟的专用通道，将内网和外网连接起来。用户通过 VPN 客户端与 VPN 服务器建立连接，VPN 服务器验证用户身份后，为用户分配一个虚拟的 IP 地址，使用户能够通过这个虚拟 IP 地址访问内网资源，就好像用户直接连接到了内网一样。</li>
+<li><strong>示例</strong>：企业员工出差在外，需要访问企业内部的办公系统。员工在自己的笔记本电脑上安装 VPN 客户端软件，通过 VPN 客户端连接到企业的 VPN 服务器，经过身份验证后，员工的电脑就可以获得一个企业内网的虚拟 IP 地址，从而可以像在企业内部一样访问办公系统等各种内网资源。</li>
+</ul>
+</li>
+<li><strong>隧道协议</strong>：通常需要有一个位于公网的第三方设备或服务器来协助建立隧道。发送端将数据封装在隧道协议数据包中发送给第三方设备，第三方设备再根据隧道协议的规则将数据转发到目标内网，在接收端再进行解封装，这里的第三方设备起到了桥接不同网络的作用，使数据能够通过隧道在不同网络之间传输。 <ul>
+<li><strong>原理</strong>：将一种网络协议的数据封装在另一种网络协议的数据包中进行传输，在不同网络之间建立起一条逻辑上的隧道。通过这种方式，使得原本不能在公网上直接传输的内网协议数据能够在公网上传输，就好像在公网上开辟了一条专门为内网数据传输的通道。</li>
+<li><strong>示例</strong>：在企业网络中，可能使用了某种特定的企业内部网络协议来进行数据通信。为了让位于不同地点的企业分支机构之间能够相互通信，就可以使用隧道协议，如 IPsec 隧道模式。将企业内部协议的数据封装在 IPsec 数据包中，通过公网进行传输。在接收端，再将数据从 IPsec 数据包中解封装出来，还原为企业内部协议的数据，供相应的设备和应用程序使用。</li>
+</ul>
+</li>
+</ul>
+<h2 id="异地组网与内网穿透-可能工具nps"><a href="#异地组网与内网穿透-可能工具nps" class="headerlink" title="异地组网与内网穿透(可能工具nps)"></a>异地组网与内网穿透(可能工具nps)</h2><p>内网穿透和异地组网既有一定的关联，也存在明显的区别，以下是具体介绍： </p>
+<h3 id="关系"><a href="#关系" class="headerlink" title="关系"></a>关系</h3><ul>
+<li><strong>目标有重叠</strong>：内网穿透和异地组网的最终目的在某些方面是一致的，都是为了实现不同网络环境下设备之间的通信和资源共享。例如，企业可能需要通过内网穿透让外部人员访问内部服务器资源，也可能需要通过异地组网将不同分支机构的网络连接起来，实现资源共享和协同工作。 </li>
+<li><strong>技术有交集</strong>：部分技术手段在两者中都会用到，如VPN技术、端口映射等。在实现内网穿透时，可以利用VPN建立虚拟通道，使外部设备能访问内网资源；在异地组网中，VPN也是常用的技术之一，用于在不同地域的网络之间建立安全的连接。</li>
+<li><strong>相互辅助</strong>：内网穿透可以作为异地组网的一种补充手段。在已经建立的异地组网环境中，如果某些特殊设备或服务需要更灵活的外部访问方式，就可以通过内网穿透来实现。例如，在企业异地组网的基础上，可能还需要让合作伙伴能够访问企业内部的特定测试服务器，这时就可以利用内网穿透技术来满足需求。</li>
+</ul>
+<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><ul>
+<li><strong>应用场景不同</strong>    </li>
+<li><ul>
+<li><strong>内网穿透</strong>：主要用于将位于内网中的单个或多个特定设备、服务暴露给外网，使外网用户能够访问到这些内网资源。常见场景如个人用户在家中搭建了一个私人网站服务器，希望通过互联网让其他人能够访问，就可以使用内网穿透技术。</li>
+</ul>
+</li>
+<li><ul>
+<li><strong>异地组网</strong>：侧重于将不同地理位置的多个网络连接成一个逻辑上的统一网络，使不同网络中的设备能够像在同一个局域网中一样进行通信和资源共享。典型场景是企业的多个分支机构分布在不同城市，需要将这些分支机构的网络连接起来，实现数据共享、视频会议等功能。</li>
+</ul>
+</li>
+<li><strong>网络结构不同</strong>   </li>
+<li><ul>
+<li><strong>内网穿透</strong>：重点在于突破单个网络的边界，实现外网对内网特定资源的访问，通常是从外网的一个点到内网的一个或多个点的连接。其网络结构相对简单，主要是在现有网络基础上，通过一些技术手段打通内外网之间的通道。</li>
+</ul>
+</li>
+<li><ul>
+<li><strong>异地组网</strong>：涉及多个不同地点的网络之间的连接和整合，形成一个更大规模的网络结构。这些网络可能有各自的子网、路由器等设备，需要通过特定的技术将它们连接起来，构建一个复杂的网络拓扑，可能包括多个子网之间的路由配置、网络地址转换等操作。</li>
+</ul>
+</li>
+<li><strong>技术实现侧重点不同</strong>    </li>
+<li><ul>
+<li><strong>内网穿透</strong>：更注重如何突破NAT限制，将内网中的端口或服务映射到外网，使外部能够访问到内部资源。常用技术有端口映射、反向代理等，主要解决的是内外网之间的单点通信问题。</li>
+</ul>
+</li>
+<li><ul>
+<li><strong>异地组网</strong>：更关注不同网络之间的整体连接和通信，需要考虑网络的稳定性、安全性、可扩展性等多个方面。除了使用VPN等技术建立连接外，还需要进行网络规划、路由配置、安全策略设置等一系列工作，以确保整个网络的正常运行和数据传输。</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/02/21/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E5%92%8C%E5%BC%82%E5%9C%B0%E7%BB%84%E7%BD%91/" data-id="cmaep75e100056s632xbw5ihm" data-title="内网穿透和异地组网" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-My-New-Post" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/02/10/My-New-Post/" class="article-date">
+  <time class="dt-published" datetime="2025-02-10T07:16:43.000Z" itemprop="datePublished">2025-02-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/02/10/My-New-Post/">My New Post</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>我打算使用博客记录我的学习过程。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/02/10/My-New-Post/" data-id="cmaep75dr00006s634ikv3gh8" data-title="My New Post" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/01/12/hello-world/" class="article-date">
+  <time class="dt-published" datetime="2025-01-11T16:00:00.000Z" itemprop="datePublished">2025-01-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2025/01/12/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/01/12/hello-world/" data-id="cmaep75dx00016s63gfqmg89b" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/05/">五月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/04/">四月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">三月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/02/">二月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/01/">一月 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/05/08/%E8%B7%AF%E7%94%B1%E5%99%A8DMZ/">路由器小结</a>
+          </li>
+        
+          <li>
+            <a href="/2025/05/07/NFC%E7%9F%A5%E8%AF%86/">NFC知识</a>
+          </li>
+        
+          <li>
+            <a href="/2025/04/15/%E6%90%AD%E5%BB%BA%E9%A2%98%E5%BA%93%E5%8F%8D%E6%80%9D/">搭建题库的反思</a>
+          </li>
+        
+          <li>
+            <a href="/2025/04/07/%E5%88%86%E5%8C%BA/">文件系统,分区表和分区</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/18/%E6%8A%95%E8%B5%84%E7%AC%94%E8%AE%B0/">投资想法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 august<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

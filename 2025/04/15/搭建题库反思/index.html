@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>搭建题库的反思 | 夏天的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="反思： 项目实现思路不明确：项目实现方法有多种，如果想要快速实现部署，必须挑选一种实现方式。例如本次项目，实现方式有：  网上寻找题库，将txt文件清洗，转为csv格式，导入数据库，搭建一个后端API，写出实现逻辑，包括了模糊查询（文本匹配）。   优点：答案稳定，正确率较高。 缺点：开发逻辑复杂，流程长，使用技术较多。   利用curl请求的方式连接AIGC的API，通过ai答题，并解析答案，自">
+<meta property="og:type" content="article">
+<meta property="og:title" content="搭建题库的反思">
+<meta property="og:url" content="http://example.com/2025/04/15/%E6%90%AD%E5%BB%BA%E9%A2%98%E5%BA%93%E5%8F%8D%E6%80%9D/index.html">
+<meta property="og:site_name" content="夏天的博客">
+<meta property="og:description" content="反思： 项目实现思路不明确：项目实现方法有多种，如果想要快速实现部署，必须挑选一种实现方式。例如本次项目，实现方式有：  网上寻找题库，将txt文件清洗，转为csv格式，导入数据库，搭建一个后端API，写出实现逻辑，包括了模糊查询（文本匹配）。   优点：答案稳定，正确率较高。 缺点：开发逻辑复杂，流程长，使用技术较多。   利用curl请求的方式连接AIGC的API，通过ai答题，并解析答案，自">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-04-15T07:00:00.000Z">
+<meta property="article:modified_time" content="2025-05-07T09:16:12.185Z">
+<meta property="article:author" content="august">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="夏天的博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">夏天的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-搭建题库反思" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/04/15/%E6%90%AD%E5%BB%BA%E9%A2%98%E5%BA%93%E5%8F%8D%E6%80%9D/" class="article-date">
+  <time class="dt-published" datetime="2025-04-15T07:00:00.000Z" itemprop="datePublished">2025-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      搭建题库的反思
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="反思："><a href="#反思：" class="headerlink" title="反思："></a>反思：</h3><ul>
+<li><p><strong>项目实现思路不明确</strong>：项目实现方法有多种，如果想要快速实现部署，必须挑选一种实现方式。例如本次项目，实现方式有：</p>
+<ol>
+<li>网上寻找题库，将txt文件清洗，转为csv格式，导入数据库，搭建一个后端API，写出实现逻辑，包括了模糊查询（文本匹配）。</li>
+</ol>
+<ul>
+<li>优点：答案稳定，正确率较高。</li>
+<li>缺点：开发逻辑复杂，流程长，使用技术较多。</li>
+</ul>
+<ol start="2">
+<li>利用curl请求的方式连接AIGC的API，通过ai答题，并解析答案，自动做选择。</li>
+</ol>
+<ul>
+<li>优点：通用语言大模型对题目适配度高，可以自己做题。</li>
+<li>缺点：大模型答案正确率不确定，返回格式不稳定，导致答案无法正常解析。并且无法正常debug，开发过程有难点。</li>
+</ul>
+<ol start="3">
+<li>通过SDK的方式接入AIGC的API，搭建一个后端API桥接，解析答案，返回前端。</li>
+</ol>
+<ul>
+<li>优点：对比直接curl，可以进行debug，答案解析更加智能。</li>
+<li>缺点：资源占用高，整体效率低。</li>
+</ul>
+<p>  没有确定实现方法，导致整体开发效率低下。</p>
+</li>
+<li><p><strong>对开发者文档没有深入理解，导致开发时阻碍较多</strong>：</p>
+<ul>
+<li>对**特殊占位符(例如：’${placeholder}’)**理解不够深入。</li>
+<li>自定义解析没有仔细查看。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span>(<span class="params">env</span>)=&gt;&#123;env.<span class="property">title</span>.<span class="title function_">replace</span>(xx,xx);&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>没能即时查看开发者社区，在社区中有很多解答。</strong></p>
+</li>
+<li><p><strong>对一个快速部署项目，没有使用熟悉工具和框架</strong>：尝试使用python flask，结果因为不熟悉Falsk和SQLServer ODBC，导致浪费时间。</p>
+</li>
+<li><p><strong>对必要开发工具不够熟悉</strong>：应该在开发时利用ai深入理解，例如.net的MapGet()函数构建最小API，<a target="_blank" rel="noopener" href="https://www.jsonlint.com/">JSON格式验证网站</a>，Curl请求API和SDK请求API的区别，Curl请求的使用方法。</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/04/15/%E6%90%AD%E5%BB%BA%E9%A2%98%E5%BA%93%E5%8F%8D%E6%80%9D/" data-id="cmaep75e300086s63btnggu71" data-title="搭建题库的反思" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2025/05/07/NFC%E7%9F%A5%E8%AF%86/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          NFC知识
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2025/04/07/%E5%88%86%E5%8C%BA/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">文件系统,分区表和分区</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/05/">五月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/04/">四月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">三月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/02/">二月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/01/">一月 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/05/08/%E8%B7%AF%E7%94%B1%E5%99%A8DMZ/">路由器小结</a>
+          </li>
+        
+          <li>
+            <a href="/2025/05/07/NFC%E7%9F%A5%E8%AF%86/">NFC知识</a>
+          </li>
+        
+          <li>
+            <a href="/2025/04/15/%E6%90%AD%E5%BB%BA%E9%A2%98%E5%BA%93%E5%8F%8D%E6%80%9D/">搭建题库的反思</a>
+          </li>
+        
+          <li>
+            <a href="/2025/04/07/%E5%88%86%E5%8C%BA/">文件系统,分区表和分区</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/18/%E6%8A%95%E8%B5%84%E7%AC%94%E8%AE%B0/">投资想法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 august<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

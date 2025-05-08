@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>NFC知识 | 夏天的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="近场通信（NFC）是一种基于无线射频识别（RFID）技术的短距离通信技术，其原理和应用场景与存储结构中的“扇区”和“扇区加密”密切相关。以下是详细解释：  一、NFC 的核心原理 工作基础 基于电磁感应，工作频率为 13.56 MHz，通信距离通常小于 10 厘米。 包含两种模式： 主动模式：双方设备（如手机和读卡器）均能主动发射电磁场交换数据。 被动模式：一方（如 NFC 标签）无电源，依赖另一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NFC知识">
+<meta property="og:url" content="http://example.com/2025/05/07/NFC%E7%9F%A5%E8%AF%86/index.html">
+<meta property="og:site_name" content="夏天的博客">
+<meta property="og:description" content="近场通信（NFC）是一种基于无线射频识别（RFID）技术的短距离通信技术，其原理和应用场景与存储结构中的“扇区”和“扇区加密”密切相关。以下是详细解释：  一、NFC 的核心原理 工作基础 基于电磁感应，工作频率为 13.56 MHz，通信距离通常小于 10 厘米。 包含两种模式： 主动模式：双方设备（如手机和读卡器）均能主动发射电磁场交换数据。 被动模式：一方（如 NFC 标签）无电源，依赖另一">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-05-07T07:00:00.000Z">
+<meta property="article:modified_time" content="2025-05-07T09:00:10.354Z">
+<meta property="article:author" content="august">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="夏天的博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">夏天的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-NFC知识" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/05/07/NFC%E7%9F%A5%E8%AF%86/" class="article-date">
+  <time class="dt-published" datetime="2025-05-07T07:00:00.000Z" itemprop="datePublished">2025-05-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      NFC知识
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>近场通信（NFC）是一种基于无线射频识别（RFID）技术的短距离通信技术，其原理和应用场景与存储结构中的“扇区”和“扇区加密”密切相关。以下是详细解释：</p>
+<hr>
+<h3 id="一、NFC-的核心原理"><a href="#一、NFC-的核心原理" class="headerlink" title="一、NFC 的核心原理"></a><strong>一、NFC 的核心原理</strong></h3><ol>
+<li><strong>工作基础</strong><ul>
+<li>基于电磁感应，工作频率为 <strong>13.56 MHz</strong>，通信距离通常小于 10 厘米。</li>
+<li>包含两种模式：<ul>
+<li><strong>主动模式</strong>：双方设备（如手机和读卡器）均能主动发射电磁场交换数据。</li>
+<li><strong>被动模式</strong>：一方（如 NFC 标签）无电源，依赖另一方的电磁场供电并反射信号。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>数据交换过程</strong><ul>
+<li><strong>初始化</strong>：读卡器生成射频场激活标签。</li>
+<li><strong>调制与解调</strong>：标签通过负载调制（改变天线阻抗）向读卡器发送数据。</li>
+<li><strong>协议层</strong>：遵循 ISO&#x2F;IEC 14443 标准（如手机支付）或 ISO&#x2F;IEC 18092 标准（设备间通信）。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="二、NFC-标签的存储结构：扇区（Sector）"><a href="#二、NFC-标签的存储结构：扇区（Sector）" class="headerlink" title="二、NFC 标签的存储结构：扇区（Sector）"></a><strong>二、NFC 标签的存储结构：扇区（Sector）</strong></h3><ol>
+<li><strong>物理存储划分</strong><ul>
+<li>NFC 标签（如常见的 MIFARE Classic 系列）的存储空间被划分为多个 <strong>扇区（Sector）</strong>，每个扇区进一步分为多个 <strong>块（Block）</strong>。</li>
+<li>示例：MIFARE Classic 1K 包含 <strong>16 个扇区</strong>，每个扇区有 <strong>4 个块</strong>（共 64 块），每块 16 字节。</li>
+</ul>
+</li>
+<li><strong>扇区的关键功能</strong><ul>
+<li><strong>数据块</strong>：存储实际数据（如门禁信息、支付金额）。</li>
+<li><strong>扇区尾（Sector Trailer）</strong>：每个扇区的最后一个块，包含：<ul>
+<li><strong>密钥 A 和密钥 B</strong>：用于访问控制的加密密钥。</li>
+<li><strong>访问控制位（Access Bits）</strong>：定义该扇区的读写权限（如是否需要密钥验证）。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="三、扇区加密的意义与实现"><a href="#三、扇区加密的意义与实现" class="headerlink" title="三、扇区加密的意义与实现"></a><strong>三、扇区加密的意义与实现</strong></h3><ol>
+<li><strong>加密目的</strong><ul>
+<li><strong>权限隔离</strong>：不同扇区可设置独立密钥，实现多应用共存（如一张卡同时用于门禁和公交支付，不同管理方控制不同扇区）。</li>
+<li><strong>防篡改与防克隆</strong>：通过密钥保护敏感数据，防止未授权读取或修改。</li>
+</ul>
+</li>
+<li><strong>加密机制</strong><ul>
+<li><strong>认证流程</strong>：<ol>
+<li>读卡器发送认证请求至标签。</li>
+<li>标签返回随机数，读卡器用密钥加密后回传。</li>
+<li>标签验证加密结果，确认合法性（如 MIFARE Classic 使用 <strong>CRYPTO1 算法</strong>）。</li>
+</ol>
+</li>
+<li><strong>访问控制位</strong>：决定操作（读&#x2F;写）是否需要密钥 A 或密钥 B，或完全禁止。</li>
+</ul>
+</li>
+<li><strong>典型攻击与防护</strong><ul>
+<li><strong>嗅探攻击</strong>：通过监听通信破解密钥（早期 MIFARE Classic 存在漏洞）。</li>
+<li><strong>防御措施</strong>：升级加密算法（如 MIFARE Plus 使用 AES 加密）、动态密钥等。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="四、实际应用场景"><a href="#四、实际应用场景" class="headerlink" title="四、实际应用场景"></a><strong>四、实际应用场景</strong></h3><ol>
+<li><p><strong>多应用场景</strong></p>
+<ul>
+<li>例如，校园一卡通可能分配：<ul>
+<li>扇区 0：学生身份信息（由学校管理，密钥 A 加密）。</li>
+<li>扇区 1：食堂储值（由餐饮公司管理，密钥 B 加密）。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>安全设计建议</strong></p>
+<ul>
+<li>避免使用默认密钥（如 MIFARE Classic 的默认密钥易被破解）。</li>
+<li>定期更新密钥，结合动态数据验证（如交易计数器）。</li>
+</ul>
+</li>
+<li><p><strong>防克隆机制</strong></p>
+<ul>
+<li><strong>滚动码系统</strong>：每次刷卡后卡内计数器更新，克隆卡无法同步，导致失效。</li>
+<li><strong>全卡签名校验</strong>：系统验证全卡数据哈希，仅克隆部分扇区无效。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="五、NFC卡片种类"><a href="#五、NFC卡片种类" class="headerlink" title="五、NFC卡片种类"></a>五、NFC卡片种类</h3><p>在 NFC 卡中，<strong>UID 卡、CUID 卡和 UFUID 卡</strong>是三类常见的可编程复制卡（俗称“空白卡”或“克隆卡”），主要用于模拟或复制其他 NFC 卡的 UID（唯一标识符）或数据。以下是它们的区别和典型用途：</p>
+<h5 id="1-UID-卡（普通-UID-卡）"><a href="#1-UID-卡（普通-UID-卡）" class="headerlink" title="1. UID 卡（普通 UID 卡）"></a><strong>1. UID 卡（普通 UID 卡）</strong></h5><ul>
+<li><strong>核心特性</strong>：<ul>
+<li><strong>UID 可写</strong>：支持一次性修改 UID（某些版本可多次修改）。</li>
+<li><strong>兼容性</strong>：基于 MIFARE Classic 1K 的模拟，兼容大多数仅验证 UID 的低安全系统（如老旧门禁）。</li>
+<li><strong>限制</strong>：<ul>
+<li>UID 修改后无法还原（某些型号支持有限次数的擦写）。</li>
+<li>可能被支持 <strong>防克隆机制</strong> 的读卡器检测为克隆卡（例如校验 UID 是否与厂商标志位匹配）。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>应用场景</strong>：<ul>
+<li>复制仅依赖 UID 验证的简单门禁卡、停车卡。</li>
+<li>低成本实验或原型开发。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h5 id="2-CUID-卡（可擦写-UID-卡）"><a href="#2-CUID-卡（可擦写-UID-卡）" class="headerlink" title="2. CUID 卡（可擦写 UID 卡）"></a><strong>2. CUID 卡（可擦写 UID 卡）</strong></h5><ul>
+<li><strong>核心特性</strong>：<ul>
+<li><strong>UID 可重复擦写</strong>：支持多次修改 UID（例如通过 Proxmark3 或特定读卡器）。</li>
+<li><strong>绕过部分防克隆检测</strong>：某些 CUID 卡能模拟原厂卡的 UID 写入方式（如“Gen2”魔术卡），避免被读卡器识别为克隆卡。</li>
+<li><strong>兼容性</strong>：支持更广泛的系统（如某些新版门禁、电梯控制系统）。</li>
+</ul>
+</li>
+<li><strong>应用场景</strong>：<ul>
+<li>复制需 UID 验证且具备简单防克隆机制的系统（如某些小区门禁）。</li>
+<li>需要多次修改 UID 的测试场景。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h5 id="3-UFUID-卡（超频-UID-卡-高级可编程卡）"><a href="#3-UFUID-卡（超频-UID-卡-高级可编程卡）" class="headerlink" title="3. UFUID 卡（超频 UID 卡&#x2F;高级可编程卡）"></a><strong>3. UFUID 卡（超频 UID 卡&#x2F;高级可编程卡）</strong></h5><ul>
+<li><strong>核心特性</strong>：<ul>
+<li><strong>动态 UID 支持</strong>：部分 UFUID 卡支持“动态 UID”模式，在每次通信时返回不同 UID，绕过高级防重放攻击。</li>
+<li><strong>抗干扰与兼容性</strong>：<ul>
+<li>优化射频性能，减少读写失败率。</li>
+<li>兼容更复杂的系统（如某些加密卡或需双向认证的场景）。</li>
+</ul>
+</li>
+<li><strong>高级功能</strong>：部分 UFUID 卡支持模拟非标协议（如 EM4305）。</li>
+</ul>
+</li>
+<li><strong>应用场景</strong>：<ul>
+<li>对抗具备动态 UID 检测或滚动码机制的系统（如高端门禁、智能锁）。</li>
+<li>需要高稳定性和抗干扰能力的工业环境。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h5 id="三者对比总结"><a href="#三者对比总结" class="headerlink" title="三者对比总结"></a><strong>三者对比总结</strong></h5><table>
+<thead>
+<tr>
+<th align="left"><strong>特性</strong></th>
+<th align="left"><strong>UID 卡</strong></th>
+<th align="left"><strong>CUID 卡</strong></th>
+<th align="left"><strong>UFUID 卡</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><strong>UID 修改次数</strong></td>
+<td align="left">单次&#x2F;有限次</td>
+<td align="left">多次</td>
+<td align="left">多次（支持动态 UID）</td>
+</tr>
+<tr>
+<td align="left"><strong>防克隆绕过能力</strong></td>
+<td align="left">弱</td>
+<td align="left">中等</td>
+<td align="left">强</td>
+</tr>
+<tr>
+<td align="left"><strong>兼容性</strong></td>
+<td align="left">低安全系统（老旧设备）</td>
+<td align="left">中等安全系统（新版门禁）</td>
+<td align="left">高安全系统（动态 UID 检测）</td>
+</tr>
+<tr>
+<td align="left"><strong>典型用途</strong></td>
+<td align="left">简单复制</td>
+<td align="left">常规克隆与测试</td>
+<td align="left">对抗高级安全机制</td>
+</tr>
+</tbody></table>
+<h3 id="六、PN532和NFC卡模拟-仅针对UID卡"><a href="#六、PN532和NFC卡模拟-仅针对UID卡" class="headerlink" title="六、PN532和NFC卡模拟(仅针对UID卡)"></a>六、PN532和NFC卡模拟(仅针对UID卡)</h3><h3 id="现代NFC设备已支持自动模拟”加密卡0扇区-加密卡卡号-”，实现门禁卡的功能，本小节内容可以忽略！！！"><a href="#现代NFC设备已支持自动模拟”加密卡0扇区-加密卡卡号-”，实现门禁卡的功能，本小节内容可以忽略！！！" class="headerlink" title="(现代NFC设备已支持自动模拟”加密卡0扇区(加密卡卡号)”，实现门禁卡的功能，本小节内容可以忽略！！！)"></a>(现代NFC设备已支持自动模拟”加密卡0扇区(加密卡卡号)”，实现门禁卡的功能，本小节内容可以忽略！！！)</h3><p><strong>PN532</strong> 是恩智浦（NXP）推出的 <strong>高性能 NFC 芯片</strong>，支持以下功能：</p>
+<ul>
+<li><p><strong>协议兼容性</strong>：ISO&#x2F;IEC 14443 Type A&#x2F;B（MIFARE、NTAG）、FeliCa、ISO 18092（NFC 点对点）。</p>
+</li>
+<li><p><strong>工作模式</strong>：读卡器（读写 NFC 标签）、卡模拟（模拟为 NFC 卡）、点对点通信。</p>
+</li>
+<li><p><strong>常见硬件形态</strong>：开发板（如 PN532 模块、Arduino NFC Shield）、手机维修工具（如 Proxmark3 的替代品）。</p>
+</li>
+</ul>
+<p>由于加密的防克隆的特性，</p>
+<h4 id="克隆加密-UID-卡-0-扇区-UID-的步骤"><a href="#克隆加密-UID-卡-0-扇区-UID-的步骤" class="headerlink" title="克隆加密 UID 卡 0 扇区(UID)的步骤"></a><strong>克隆加密 UID 卡 0 扇区(UID)的步骤</strong></h4><h4 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a><strong>前提条件</strong></h4><ol>
+<li><strong>硬件准备</strong>：<ul>
+<li>PN532 模块（通过 USB、UART 或 I2C 连接电脑）。</li>
+<li>一张加密的原卡（需克隆的 UID 卡）。</li>
+<li>一张空白可写卡（如 UID 卡、CUID 卡或 FUID 卡）。</li>
+</ul>
+</li>
+<li><strong>软件工具</strong>：<ul>
+<li><strong>MIFARE Classic Tool (MCT)</strong>（Android 端，需 OTG 支持）。</li>
+<li><strong>libnfc</strong> 或 <strong>nfcpy</strong>（PC 端，需驱动支持）。</li>
+<li><strong>mfoc&#x2F;mfcuk</strong>（用于破解 MIFARE Classic 加密密钥）。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="步骤-1：读取原卡数据"><a href="#步骤-1：读取原卡数据" class="headerlink" title="步骤 1：读取原卡数据"></a><strong>步骤 1：读取原卡数据</strong></h4><ol>
+<li><p><strong>连接 PN532</strong>：</p>
+<ul>
+<li>将 PN532 模块通过 USB 或串口连接至电脑&#x2F;手机，确保驱动正常。</li>
+<li>在 MIFARE Classic Tool（Android）或 <code>nfc-list</code>（PC）中检测设备是否就绪。</li>
+</ul>
+</li>
+<li><p><strong>读取原卡 UID 和扇区 0</strong>：</p>
+<ul>
+<li>打开 MCT，将原卡贴近 PN532，选择 <strong>“读标签”</strong>。</li>
+<li>如果扇区 0 加密，工具会提示需要密钥（如 <code>FFFFFFFFFFFF</code> 是默认密钥，但加密卡可能已修改）。</li>
+</ul>
+</li>
+<li><p><strong>破解扇区 0 的密钥</strong>（若加密）：</p>
+<ul>
+<li><p><strong>使用 mfoc</strong>（PC 端）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mfoc -O dump.mfd  <span class="comment"># 尝试破解密钥并导出数据</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>使用 MCT 的密钥嗅探功能</strong>（需多次刷卡触发密钥验证过程）。</p>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h4 id="步骤-2：克隆到空白卡"><a href="#步骤-2：克隆到空白卡" class="headerlink" title="步骤 2：克隆到空白卡"></a><strong>步骤 2：克隆到空白卡</strong></h4><ol>
+<li><strong>写入 UID</strong>：<ul>
+<li>选择空白卡类型：<ul>
+<li><strong>UID 卡</strong>：支持修改 UID，但可能被防克隆机制检测。</li>
+<li><strong>CUID&#x2F;FUID 卡</strong>：更隐蔽，适合对抗简单防克隆系统。</li>
+</ul>
+</li>
+<li>在 MCT 中选择 <strong>“写标签”</strong> → <strong>“写 UID”</strong>，输入原卡 UID。</li>
+</ul>
+</li>
+<li><strong>写入扇区 0 数据</strong>：<ul>
+<li>如果扇区 0 未加密（仅 UID 被校验）：<ul>
+<li>直接使用 MCT 的 <strong>“写扇区”</strong> 功能，将原卡扇区 0 数据写入空白卡。</li>
+</ul>
+</li>
+<li>如果扇区 0 加密：<ul>
+<li>需将破解的密钥（如 <code>A0A1A2A3A4A5</code>）与数据一起写入，并在空白卡中设置相同的访问控制位。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>验证克隆结果</strong>：<ul>
+<li>使用读卡器验证新卡的 UID 和扇区 0 数据是否与原卡一致。</li>
+<li>测试门禁系统是否识别（某些系统可能校验全卡数据，需克隆更多扇区）</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/05/07/NFC%E7%9F%A5%E8%AF%86/" data-id="cmaep75e100046s63aeoa4jsb" data-title="NFC知识" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2025/05/08/%E8%B7%AF%E7%94%B1%E5%99%A8DMZ/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          路由器小结
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2025/04/15/%E6%90%AD%E5%BB%BA%E9%A2%98%E5%BA%93%E5%8F%8D%E6%80%9D/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">搭建题库的反思</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/05/">五月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/04/">四月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">三月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/02/">二月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/01/">一月 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/05/08/%E8%B7%AF%E7%94%B1%E5%99%A8DMZ/">路由器小结</a>
+          </li>
+        
+          <li>
+            <a href="/2025/05/07/NFC%E7%9F%A5%E8%AF%86/">NFC知识</a>
+          </li>
+        
+          <li>
+            <a href="/2025/04/15/%E6%90%AD%E5%BB%BA%E9%A2%98%E5%BA%93%E5%8F%8D%E6%80%9D/">搭建题库的反思</a>
+          </li>
+        
+          <li>
+            <a href="/2025/04/07/%E5%88%86%E5%8C%BA/">文件系统,分区表和分区</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/18/%E6%8A%95%E8%B5%84%E7%AC%94%E8%AE%B0/">投资想法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 august<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

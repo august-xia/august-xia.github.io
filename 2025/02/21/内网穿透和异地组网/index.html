@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>内网穿透和异地组网 | 夏天的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="内网穿透原理在实现内网穿透的方法中，对NAT设备的控制需求和是否需要第三方桥接情况各有不同，以下是具体分析：  需要控制NAT设备的方法 端口映射：此方法需要在NAT设备（如路由器）上进行手动配置，明确地将外部端口与内部设备的端口进行对应设置，以允许外部请求能正确到达内网设备，所以必须要对NAT设备有控制权限才能进行相关配置操作。  原理：在路由器或防火墙等网络设备上进行设置，将外部网络的特定端口">
+<meta property="og:type" content="article">
+<meta property="og:title" content="内网穿透和异地组网">
+<meta property="og:url" content="http://example.com/2025/02/21/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E5%92%8C%E5%BC%82%E5%9C%B0%E7%BB%84%E7%BD%91/index.html">
+<meta property="og:site_name" content="夏天的博客">
+<meta property="og:description" content="内网穿透原理在实现内网穿透的方法中，对NAT设备的控制需求和是否需要第三方桥接情况各有不同，以下是具体分析：  需要控制NAT设备的方法 端口映射：此方法需要在NAT设备（如路由器）上进行手动配置，明确地将外部端口与内部设备的端口进行对应设置，以允许外部请求能正确到达内网设备，所以必须要对NAT设备有控制权限才能进行相关配置操作。  原理：在路由器或防火墙等网络设备上进行设置，将外部网络的特定端口">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-02-21T04:02:46.000Z">
+<meta property="article:modified_time" content="2025-02-21T04:09:23.253Z">
+<meta property="article:author" content="august">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="夏天的博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">夏天的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-内网穿透和异地组网" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2025/02/21/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E5%92%8C%E5%BC%82%E5%9C%B0%E7%BB%84%E7%BD%91/" class="article-date">
+  <time class="dt-published" datetime="2025-02-21T04:02:46.000Z" itemprop="datePublished">2025-02-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      内网穿透和异地组网
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="内网穿透原理"><a href="#内网穿透原理" class="headerlink" title="内网穿透原理"></a>内网穿透原理</h2><p>在实现内网穿透的方法中，对NAT设备的控制需求和是否需要第三方桥接情况各有不同，以下是具体分析： </p>
+<h3 id="需要控制NAT设备的方法"><a href="#需要控制NAT设备的方法" class="headerlink" title="需要控制NAT设备的方法"></a>需要控制NAT设备的方法</h3><ul>
+<li><strong>端口映射</strong>：此方法需要在NAT设备（如路由器）上进行手动配置，明确地将外部端口与内部设备的端口进行对应设置，以允许外部请求能正确到达内网设备，所以必须要对NAT设备有控制权限才能进行相关配置操作。 <ul>
+<li><strong>原理</strong>：在路由器或防火墙等网络设备上进行设置，将外部网络的特定端口与内部网络中特定设备的特定端口进行映射。当外部网络的请求到达路由器的公网 IP 的指定端口时，路由器会根据设置将请求转发到内部网络中对应设备的相应端口上，从而实现外部对内部设备的访问。</li>
+<li><strong>示例</strong>：假设内网中有一台服务器，其 IP 地址为 192.168.1.100，提供 Web 服务，端口为 80。通过在路由器上设置端口映射，将路由器的公网 IP 的 8080 端口映射到内网服务器的 80 端口。这样，外部用户访问路由器的公网 IP 的 8080 端口时，实际上访问的是内网中 IP 为 192.168.1.100 的服务器的 80 端口。</li>
+</ul>
+</li>
+<li><strong>NAT穿越技术</strong>：在一些情况下，尤其是当需要实现特定的、更灵活的内网穿透功能时，可能需要对NAT设备进行配置调整，比如设置特定的NAT转换规则、调整端口范围等，以确保内网设备能顺利与外网进行通信，因此也需要一定程度上控制NAT设备。<ul>
+<li><strong>原理</strong>：NAT 设备会为内部网络中的设备分配私有 IP 地址，并维护一个地址转换表，记录内部私有 IP 地址与外部公网 IP 地址之间的映射关系。当内部设备要与外部设备通信时，NAT 设备会将内部设备的私有 IP 地址转换为公网 IP 地址，使数据包能够在公网上传输。同时，当外部设备响应时，NAT 设备又会根据地址转换表，将公网 IP 地址转换回内部设备的私有 IP 地址，将数据包正确地转发给内部设备。</li>
+<li><strong>示例</strong>：家庭网络中的多台设备通过路由器连接到互联网，路由器就是一个 NAT 设备。当家里的电脑要访问互联网上的网站时，电脑使用的是内部私有 IP 地址，路由器会将电脑发出的数据包中的源 IP 地址转换为路由器的公网 IP 地址，然后发送到互联网上。当网站响应时，路由器再根据之前的映射关系，将数据包中的目的 IP 地址转换为电脑的私有 IP 地址，将数据正确地交给电脑。</li>
+</ul>
+</li>
+</ul>
+<h3 id="需要第三方桥接的方法"><a href="#需要第三方桥接的方法" class="headerlink" title="需要第三方桥接的方法"></a>需要第三方桥接的方法</h3><ul>
+<li><strong>反向代理</strong>：通常需要在公网中部署一台第三方的反向代理服务器，该服务器作为外部请求与内网服务之间的桥梁。外部用户的请求先到达反向代理服务器，再由它转发到内网服务器，然后将响应返回给外部用户，这里的反向代理服务器就是起到了第三方桥接的作用。 <ul>
+<li><strong>原理</strong>：在公网中有一台具有公网 IP 的服务器作为反向代理服务器。内网中的服务器将自己的服务信息注册到反向代理服务器上。当外部用户请求访问内网中的服务时，先将请求发送到反向代理服务器，反向代理服务器根据请求的内容和事先的配置，将请求转发到对应的内网服务器上，然后再将内网服务器的响应返回给外部用户。</li>
+<li><strong>示例</strong>：企业内部有多个业务系统，如财务系统、办公系统等，都在内网中。在公网上部署一台反向代理服务器，企业的域名解析到这台反向代理服务器。当员工在外部访问企业的财务系统时，请求先到达反向代理服务器，反向代理服务器根据请求的路径等信息，将请求转发到内网中的财务系统服务器上，获取数据后再返回给员工。</li>
+</ul>
+</li>
+<li><strong>VPN（虚拟专用网络）</strong>：一般需要借助VPN服务器来建立连接，VPN服务器作为第三方，在用户和内网之间搭建起虚拟通道。用户通过VPN客户端与VPN服务器连接，经身份验证后获得虚拟IP地址来访问内网资源，VPN服务器起到了桥接内外网络的作用。 <ul>
+<li><strong>原理</strong>：通过在公网上建立一条虚拟的专用通道，将内网和外网连接起来。用户通过 VPN 客户端与 VPN 服务器建立连接，VPN 服务器验证用户身份后，为用户分配一个虚拟的 IP 地址，使用户能够通过这个虚拟 IP 地址访问内网资源，就好像用户直接连接到了内网一样。</li>
+<li><strong>示例</strong>：企业员工出差在外，需要访问企业内部的办公系统。员工在自己的笔记本电脑上安装 VPN 客户端软件，通过 VPN 客户端连接到企业的 VPN 服务器，经过身份验证后，员工的电脑就可以获得一个企业内网的虚拟 IP 地址，从而可以像在企业内部一样访问办公系统等各种内网资源。</li>
+</ul>
+</li>
+<li><strong>隧道协议</strong>：通常需要有一个位于公网的第三方设备或服务器来协助建立隧道。发送端将数据封装在隧道协议数据包中发送给第三方设备，第三方设备再根据隧道协议的规则将数据转发到目标内网，在接收端再进行解封装，这里的第三方设备起到了桥接不同网络的作用，使数据能够通过隧道在不同网络之间传输。 <ul>
+<li><strong>原理</strong>：将一种网络协议的数据封装在另一种网络协议的数据包中进行传输，在不同网络之间建立起一条逻辑上的隧道。通过这种方式，使得原本不能在公网上直接传输的内网协议数据能够在公网上传输，就好像在公网上开辟了一条专门为内网数据传输的通道。</li>
+<li><strong>示例</strong>：在企业网络中，可能使用了某种特定的企业内部网络协议来进行数据通信。为了让位于不同地点的企业分支机构之间能够相互通信，就可以使用隧道协议，如 IPsec 隧道模式。将企业内部协议的数据封装在 IPsec 数据包中，通过公网进行传输。在接收端，再将数据从 IPsec 数据包中解封装出来，还原为企业内部协议的数据，供相应的设备和应用程序使用。</li>
+</ul>
+</li>
+</ul>
+<h2 id="异地组网与内网穿透-可能工具nps"><a href="#异地组网与内网穿透-可能工具nps" class="headerlink" title="异地组网与内网穿透(可能工具nps)"></a>异地组网与内网穿透(可能工具nps)</h2><p>内网穿透和异地组网既有一定的关联，也存在明显的区别，以下是具体介绍： </p>
+<h3 id="关系"><a href="#关系" class="headerlink" title="关系"></a>关系</h3><ul>
+<li><strong>目标有重叠</strong>：内网穿透和异地组网的最终目的在某些方面是一致的，都是为了实现不同网络环境下设备之间的通信和资源共享。例如，企业可能需要通过内网穿透让外部人员访问内部服务器资源，也可能需要通过异地组网将不同分支机构的网络连接起来，实现资源共享和协同工作。 </li>
+<li><strong>技术有交集</strong>：部分技术手段在两者中都会用到，如VPN技术、端口映射等。在实现内网穿透时，可以利用VPN建立虚拟通道，使外部设备能访问内网资源；在异地组网中，VPN也是常用的技术之一，用于在不同地域的网络之间建立安全的连接。</li>
+<li><strong>相互辅助</strong>：内网穿透可以作为异地组网的一种补充手段。在已经建立的异地组网环境中，如果某些特殊设备或服务需要更灵活的外部访问方式，就可以通过内网穿透来实现。例如，在企业异地组网的基础上，可能还需要让合作伙伴能够访问企业内部的特定测试服务器，这时就可以利用内网穿透技术来满足需求。</li>
+</ul>
+<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><ul>
+<li><strong>应用场景不同</strong>    </li>
+<li><ul>
+<li><strong>内网穿透</strong>：主要用于将位于内网中的单个或多个特定设备、服务暴露给外网，使外网用户能够访问到这些内网资源。常见场景如个人用户在家中搭建了一个私人网站服务器，希望通过互联网让其他人能够访问，就可以使用内网穿透技术。</li>
+</ul>
+</li>
+<li><ul>
+<li><strong>异地组网</strong>：侧重于将不同地理位置的多个网络连接成一个逻辑上的统一网络，使不同网络中的设备能够像在同一个局域网中一样进行通信和资源共享。典型场景是企业的多个分支机构分布在不同城市，需要将这些分支机构的网络连接起来，实现数据共享、视频会议等功能。</li>
+</ul>
+</li>
+<li><strong>网络结构不同</strong>   </li>
+<li><ul>
+<li><strong>内网穿透</strong>：重点在于突破单个网络的边界，实现外网对内网特定资源的访问，通常是从外网的一个点到内网的一个或多个点的连接。其网络结构相对简单，主要是在现有网络基础上，通过一些技术手段打通内外网之间的通道。</li>
+</ul>
+</li>
+<li><ul>
+<li><strong>异地组网</strong>：涉及多个不同地点的网络之间的连接和整合，形成一个更大规模的网络结构。这些网络可能有各自的子网、路由器等设备，需要通过特定的技术将它们连接起来，构建一个复杂的网络拓扑，可能包括多个子网之间的路由配置、网络地址转换等操作。</li>
+</ul>
+</li>
+<li><strong>技术实现侧重点不同</strong>    </li>
+<li><ul>
+<li><strong>内网穿透</strong>：更注重如何突破NAT限制，将内网中的端口或服务映射到外网，使外部能够访问到内部资源。常用技术有端口映射、反向代理等，主要解决的是内外网之间的单点通信问题。</li>
+</ul>
+</li>
+<li><ul>
+<li><strong>异地组网</strong>：更关注不同网络之间的整体连接和通信，需要考虑网络的稳定性、安全性、可扩展性等多个方面。除了使用VPN等技术建立连接外，还需要进行网络规划、路由配置、安全策略设置等一系列工作，以确保整个网络的正常运行和数据传输。</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2025/02/21/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E5%92%8C%E5%BC%82%E5%9C%B0%E7%BB%84%E7%BD%91/" data-id="cmaep75e100056s632xbw5ihm" data-title="内网穿透和异地组网" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2025/03/18/%E7%A9%BF%E9%80%8F%E7%BB%84%E7%BD%91%E7%BD%91%E7%BB%9C%E6%8B%93%E6%89%91%E6%80%9D%E8%B7%AF/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          穿透和组网的网络拓扑思路
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2025/02/10/My-New-Post/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">My New Post</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/05/">五月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/04/">四月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">三月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/02/">二月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/01/">一月 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2025/05/08/%E8%B7%AF%E7%94%B1%E5%99%A8DMZ/">路由器小结</a>
+          </li>
+        
+          <li>
+            <a href="/2025/05/07/NFC%E7%9F%A5%E8%AF%86/">NFC知识</a>
+          </li>
+        
+          <li>
+            <a href="/2025/04/15/%E6%90%AD%E5%BB%BA%E9%A2%98%E5%BA%93%E5%8F%8D%E6%80%9D/">搭建题库的反思</a>
+          </li>
+        
+          <li>
+            <a href="/2025/04/07/%E5%88%86%E5%8C%BA/">文件系统,分区表和分区</a>
+          </li>
+        
+          <li>
+            <a href="/2025/03/18/%E6%8A%95%E8%B5%84%E7%AC%94%E8%AE%B0/">投资想法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2025 august<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
