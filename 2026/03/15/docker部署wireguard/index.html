@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>MacOS Docker Desktop部署wiregurad服务端 | 夏天的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="MacOS Docker部署wireguard 安装docker。 准备yaml配置文件。  1234567891011121314151617181920212223242526虚拟机网络模式services: wireguard:  image: lscr.io&#x2F;linuxserver&#x2F;wireguard:latest  container_name: wireguard  cap_add:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MacOS Docker Desktop部署wiregurad服务端">
+<meta property="og:url" content="http://example.com/2026/03/15/docker%E9%83%A8%E7%BD%B2wireguard/index.html">
+<meta property="og:site_name" content="夏天的博客">
+<meta property="og:description" content="MacOS Docker部署wireguard 安装docker。 准备yaml配置文件。  1234567891011121314151617181920212223242526虚拟机网络模式services: wireguard:  image: lscr.io&#x2F;linuxserver&#x2F;wireguard:latest  container_name: wireguard  cap_add:">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-03-15T07:00:00.000Z">
+<meta property="article:modified_time" content="2026-03-16T10:07:04.906Z">
+<meta property="article:author" content="august">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="夏天的博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">夏天的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-docker部署wireguard" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/15/docker%E9%83%A8%E7%BD%B2wireguard/" class="article-date">
+  <time class="dt-published" datetime="2026-03-15T07:00:00.000Z" itemprop="datePublished">2026-03-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      MacOS Docker Desktop部署wiregurad服务端
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="MacOS-Docker部署wireguard"><a href="#MacOS-Docker部署wireguard" class="headerlink" title="MacOS Docker部署wireguard"></a>MacOS Docker部署wireguard</h1><ol>
+<li>安装docker。</li>
+<li>准备yaml配置文件。</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">虚拟机网络模式</span><br><span class="line">services:</span><br><span class="line"> wireguard:</span><br><span class="line">  image: lscr.io/linuxserver/wireguard:latest</span><br><span class="line">  container_name: wireguard</span><br><span class="line">  cap_add:</span><br><span class="line">    - NET_ADMIN</span><br><span class="line">    - SYS_MODULE</span><br><span class="line">  environment:</span><br><span class="line">    - PUID=1000</span><br><span class="line">    - PGID=1000</span><br><span class="line">    - TZ=Asia/Shanghai</span><br><span class="line">    - SERVERURL=11749te3849sh.vicp.fun</span><br><span class="line">    - SERVERPORT=51820</span><br><span class="line">    - PEERS=4</span><br><span class="line">    - PEERDNS=auto</span><br><span class="line">    - INTERNAL_SUBNET=10.13.13.0/24</span><br><span class="line">    - ALLOWEDIPS=0.0.0.0/0,::/0</span><br><span class="line">  ports:</span><br><span class="line">    - &quot;51820:51820/udp&quot;</span><br><span class="line">  volumes:</span><br><span class="line">    - ./config:/config</span><br><span class="line">  sysctls:</span><br><span class="line">    - net.ipv4.conf.all.src_valid_mark=1</span><br><span class="line">    - net.ipv4.ip_forward=1</span><br><span class="line">  restart: unless-stopped</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">宿主机网络模式</span><br><span class="line">services:</span><br><span class="line"> wireguard:</span><br><span class="line">  image: lscr.io/linuxserver/wireguard:latest</span><br><span class="line">  container_name: wireguard</span><br><span class="line">  network_mode: &quot;host&quot;</span><br><span class="line">  cap_add:</span><br><span class="line">    - NET_ADMIN</span><br><span class="line">    - SYS_MODULE</span><br><span class="line">  environment:</span><br><span class="line">    - PUID=1000</span><br><span class="line">    - PGID=1000</span><br><span class="line">    - TZ=Asia/Shanghai</span><br><span class="line">    - SERVERURL=11749te3849sh.vicp.fun</span><br><span class="line">    - SERVERPORT=51820</span><br><span class="line">    - PEERS=4</span><br><span class="line">    - PEERDNS=auto</span><br><span class="line">    - INTERNAL_SUBNET=10.13.13.0/24</span><br><span class="line">    - ALLOWEDIPS=0.0.0.0/0,::/0</span><br><span class="line">  volumes:</span><br><span class="line">    - ./config:/config</span><br><span class="line">  restart: unless-stopped</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><p>启动文件。</p>
+<p> docker compose up -d</p>
+</li>
+</ol>
+<h1 id="终端terminal-代码"><a href="#终端terminal-代码" class="headerlink" title="终端terminal 代码"></a>终端terminal 代码</h1><h2 id="ip转发部分（必须执行，小数点后为多选）"><a href="#ip转发部分（必须执行，小数点后为多选）" class="headerlink" title="ip转发部分（必须执行，小数点后为多选）"></a>ip转发部分（必须执行，小数点后为多选）</h2><p><strong>1.1 检查ip转发状态（开启&#x2F;关闭）</strong></p>
+<pre><code>sysctl net.inet.ip.forwarding
+</code></pre>
+<p><strong>2.1 手动开启ip转发（重启后失效）</strong></p>
+<pre><code>sudo sysctl -w net.inet.ip.forwarding=1
+</code></pre>
+<p><strong>2.2 自动开启ip转发（开机自启动）</strong></p>
+<pre><code>#1.创建或查看用于开启ip转发的脚本
+sudo nano /Library/LaunchDaemons/com.enable.ipforward.plist
+
+#2.编辑脚本
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE plist PUBLIC &quot;-//Apple//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
+&lt;plist version=&quot;1.0&quot;&gt;
+&lt;dict&gt;
+    &lt;key&gt;Label&lt;/key&gt;
+    &lt;string&gt;com.enable.ipforward&lt;/string&gt;
+    &lt;key&gt;ProgramArguments&lt;/key&gt;
+    &lt;array&gt;
+        &lt;string&gt;/usr/sbin/sysctl&lt;/string&gt;
+        &lt;string&gt;-w&lt;/string&gt;
+        &lt;string&gt;net.inet.ip.forwarding=1&lt;/string&gt;
+        &lt;!-- 如需开启 IPv6 转发，添加下面一行 --&gt;
+        &lt;!-- &lt;string&gt;net.inet6.ip6.forwarding=1&lt;/string&gt; --&gt;
+    &lt;/array&gt;
+    &lt;key&gt;RunAtLoad&lt;/key&gt;
+    &lt;true/&gt;
+    &lt;key&gt;KeepAlive&lt;/key&gt;
+    &lt;false/&gt;
+    &lt;key&gt;User&lt;/key&gt;
+    &lt;string&gt;root&lt;/string&gt;
+&lt;/dict&gt;
+&lt;/plist&gt;
+
+#3.设置权限（必须，否则 launchd 无法加载）
+sudo chown root:wheel /Library/LaunchDaemons/com.enable.ipforward.plist
+sudo chmod 644 /Library/LaunchDaemons/com.enable.ipforward.plist
+
+#4.加载配置（无需重启）
+sudo launchctl load /Library/LaunchDaemons/com.enable.ipforward.plist
+</code></pre>
+<p><strong>3.1 设置nat(ip转发)规则</strong></p>
+<pre><code>#1.查看所有nat规则
+sudo pfctl -s nat
+
+#2.创建或查看nat的脚本
+sudo nano /etc/pf.anchors/com.wireguard.nat
+
+#3.1编辑nat规则（开启默认端口，范围为49152–65535）
+nat on en1 from 10.13.13.0/24 to any -&gt; (en1)
+#3.2编辑nat规则（开启全部可用端口）
+nat on en1 from 10.13.13.0/24 to any -&gt; (en1) port 1024:65535
+
+#4.启动nat规则
+sudo pfctl -ef /etc/pf.anchors/com.wireguard.nat
+</code></pre>
+<h2 id="其余部分（可选）"><a href="#其余部分（可选）" class="headerlink" title="其余部分（可选）"></a>其余部分（可选）</h2><h3 id="重要"><a href="#重要" class="headerlink" title="重要"></a>重要</h3><p><strong>监听抓包 所有网卡(any) 51820端口(51820) UDP(udp)流量</strong></p>
+<p>sudo tcpdump -n -i any udp port 51820</p>
+<h3 id="不重要"><a href="#不重要" class="headerlink" title="不重要"></a>不重要</h3><p><strong>检查本机网口</strong></p>
+<p>route -n get default | grep interface</p>
+<p><strong>51820端口下的所有网络进程</strong></p>
+<p>lsof -i :51820</p>
+<p><strong>监听所有相关条目（可以进入docker文件夹执行）</strong></p>
+<p>netstat -an</p>
+<p><strong>512820端口下的所有相关条目</strong></p>
+<p>netstat -an | grep 51820</p>
+<h1 id="进入docker-wireguard-bash专用"><a href="#进入docker-wireguard-bash专用" class="headerlink" title="进入docker&#x2F;wireguard bash专用"></a>进入docker&#x2F;wireguard bash专用</h1><p>进入文件夹：docker exec -it wireguard &#x2F;bin&#x2F;sh</p>
+<p>检查wireguard历史连接状况：wg show</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/03/15/docker%E9%83%A8%E7%BD%B2wireguard/" data-id="cmmt16lvn0001dw637ye435tt" data-title="MacOS Docker Desktop部署wiregurad服务端" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2026/03/15/docker%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE%E7%9F%A5%E8%AF%86/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          Docker网络配置（主要针对macOS的docker desktop）
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2025/09/20/test/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">test</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/03/">三月 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/09/">九月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/05/">五月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/04/">四月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/03/">三月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/02/">二月 2025</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/01/">一月 2025</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/03/15/docker%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE%E7%9F%A5%E8%AF%86/">Docker网络配置（主要针对macOS的docker desktop）</a>
+          </li>
+        
+          <li>
+            <a href="/2026/03/15/docker%E9%83%A8%E7%BD%B2wireguard/">MacOS Docker Desktop部署wiregurad服务端</a>
+          </li>
+        
+          <li>
+            <a href="/2025/09/20/test/">test</a>
+          </li>
+        
+          <li>
+            <a href="/2025/05/07/NFC%E7%9F%A5%E8%AF%86/">NFC知识</a>
+          </li>
+        
+          <li>
+            <a href="/2025/04/15/%E6%90%AD%E5%BB%BA%E9%A2%98%E5%BA%93%E5%8F%8D%E6%80%9D/">搭建题库的反思</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 august<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
